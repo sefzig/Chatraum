@@ -27,7 +27,7 @@
     // Smooch-Bot
        "smooch": {
           
-          "appToken": "d9k415y76nk8ab2croifjshpv"
+          "appToken": "ai2qsisrse83jpl3k2pvr34tv"
           
        }
        
