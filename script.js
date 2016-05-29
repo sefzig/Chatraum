@@ -9,7 +9,6 @@ module.exports = new Script({
     },
 
     start: {
-        prompt: (bot) => bot.say('Hallo?'),
         receive: (bot) => {
             return bot.say('Hi! I am Smooch Bot!')
                 .then(() => 'askName');
@@ -21,7 +20,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say(`Great! I will call you ${name} Is that OK? %[Yes](postback:yes) %[No](postback:no)`))
+                .then(() => bot.say('Great! I will call you ${name} Is that OK? %[That is fine](postback:yes) %[Please dont](postback:no)'))
                 .then(() => 'finish');
         }
     },
@@ -29,7 +28,7 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say(`Sorry ${name}, my creator did not teach me how to do anything else!`))
+                .then((name) => bot.say('Sorry ${name}, my creator did not teach me how to do anything else!'))
                 .then(() => 'finish');
         }
     }
