@@ -9,6 +9,7 @@ module.exports = new Script({
     },
 
     start: {
+        prompt: (bot) => bot.say('Hallo?'),
         receive: (bot) => {
             return bot.say('Hi! I am Smooch Bot!')
                 .then(() => 'askName');
