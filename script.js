@@ -86,7 +86,7 @@
  // - bot_kamel:  Empfangsbot
  // - bot_gross:  EMPFANGSBOT
  // ---------------------------
- 
+  
     empfang: {
   	
        receive: (bot, message) => {
