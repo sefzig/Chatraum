@@ -96,7 +96,8 @@
                dann = "empfang";
                
             }
-            if ((antwort == "--EMAIL")) {
+            if ((antwort == "--EMAIL") ||
+                (antwort == "--E-MAIL")) {
                
             // bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
                dann = "emailadresse";
@@ -128,10 +129,11 @@
             
             nachname = message.text; 
             nachname = nachname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
+            nachname = nachname.replace("--","");
             
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie Ihre --Email -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückkehren. [Javascript:cookies(nachname,'+nachname+')] '))
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie Ihre --E-Mail -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückkehren. [Javascript:cookies(nachname,'+nachname+')] '))
                 .then(() => 'name');
             
         }
@@ -151,13 +153,13 @@
             	
                return bot.setProp('email', email)
                   .then(() => bot.say(EmpfangsBot+''+email+' ist eine valide E-Mail-Adresse. [Javascript:cookies(email,'+email+')] '))
-                  .then(() => bot.say(EmpfangsBot+'Schreiben Sie --Email, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
+                  .then(() => bot.say(EmpfangsBot+'Schreiben Sie --E-Mail, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
                   .then(() => 'empfang');
                
             }
             else {
             	
-               return bot.say(EmpfangsBot+''+email+' wird nicht als E-Mail-Adresse erkannt. ')
+               return bot.say(EmpfangsBot+''+email+' ist keine valide E-Mail-Adresse. ')
                   .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
                   .then(() => 'emailadresse');
                
@@ -248,7 +250,7 @@
           
           if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(EmpfangsBot+' Wollen Sie --telefonieren, --mailen oder --twittern? ')).then(() => 'empfang');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'empfang');}          
-          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}if (~befehl.indexOf("--E-MAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}          
+          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(EmpfangsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'empfang');}          
        // -----------------
        // Über uns
@@ -410,7 +412,7 @@
           
           if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(VerkaufsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(VerkaufsBot+' Wollen Sie --telefonieren, --mailen oder --twittern? ')).then(() => 'verkauf');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(VerkaufsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'verkauf');}          
-          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(VerkaufsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'verkauf');}if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(VerkaufsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'verkauf');}if (~befehl.indexOf("--E-MAIL")) { versuch = true; return bot.say(VerkaufsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'verkauf');}          
+          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(VerkaufsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'verkauf');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(VerkaufsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'verkauf');}          
        // -----------------
        // Über uns
@@ -574,7 +576,7 @@
           
           if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(MarketingBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(MarketingBot+' Wollen Sie --telefonieren, --mailen oder --twittern? ')).then(() => 'marketing');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(MarketingBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'marketing');}          
-          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(MarketingBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'marketing');}if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(MarketingBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'marketing');}if (~befehl.indexOf("--E-MAIL")) { versuch = true; return bot.say(MarketingBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'marketing');}          
+          if (~befehl.indexOf("--MAIL")) { versuch = true; return bot.say(MarketingBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'marketing');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(MarketingBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'marketing');}          
        // -----------------
        // Über uns
