@@ -115,7 +115,7 @@
         receive: (bot, message) => {
             
             vorname = message.text;
-         // vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
+            vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
             
             return bot.setProp('vorname', vorname)
                 .then(() => bot.say(EmpfangsBot+''+vorname+', prima.'))
@@ -134,15 +134,14 @@
             
             bot.setProp('nachname', nachname);
             return bot.getProp('vorname')
-                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Mögen Sie Ihre --E-Mail -Adresse hinterlassen? Ansonsten lassen Sie uns zum --Empfang zurückkehren. [Javascript:cookies(nachname,'+nachname+')] '))
-                .then(() => 'name');
+                .then((vorname) => bot.say(EmpfangsBot+'Sie heissen also '+vorname+' '+nachname+'. Bitte geben Sie nun Ihre E-Mail-Adresse ein (sie können auch --abbrechen). [Javascript:cookies(nachname,'+nachname+')] '))
+                .then(() => 'emailadresse');
             
         }
     },
 
     emailadresse: {
     	
-        prompt: (bot) => bot.say(EmpfangsBot+'Wie lautet Ihre E-Mail-Adresse?'),
         receive: (bot, message) => {
             
             email = message.text;
