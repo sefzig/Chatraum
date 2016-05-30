@@ -9,7 +9,7 @@
           "name": "Chatraum",
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
-          "defaultMenu": "robogeddon", // anderesmenu, robogeddon
+          "defaultMenu": "chatraum", // chatraum, robogeddon
           "defaultButton": "an", // an, aus
           "defaultBefehler": "an", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/ChatraumCdn/dateien/"
