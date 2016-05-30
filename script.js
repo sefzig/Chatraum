@@ -11,7 +11,7 @@ module.exports = new Script({
     start: {
         receive: (bot) => {
             return bot.say('[TechnikBot] Hallo, ich bin Cynthia, Technik-Bot.')
-                .then(() => bot.say('[TechnikBot] Nade.js funktioniert.'))
+                .then(() => bot.say('[TechnikBot] // Node.js funktioniert.'))
                 .then(() => 'askName');
         }
     },
@@ -32,7 +32,7 @@ module.exports = new Script({
         receive: (bot, message) => {
             const befehl = message.text;
             return bot.setProp('befehl', befehl)
-                .then(() => bot.say('[TechnikBot] --Befehle funktionieren.'))
+                .then(() => bot.say('[TechnikBot] // --Befehle funktionieren.'))
                 .then(() => 'testAbgeschlossen');
         }
     },
@@ -40,10 +40,9 @@ module.exports = new Script({
     testAbgeschlossen: {
         prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie nocheinmal etwas!'),
         receive: (bot, message) => {
-            const test = "abgeschlossen";
-            return bot.setProp('test', test)
-                .then(() => bot.say('[TechnikBot] '+name+', Konstanten funktionieren.'))
-                .then(() => bot.say('[TechnikBot] Test abgeschlossen.'))
+            return bot.getProp('name')
+                .then((name) => bot.say('[TechnikBot] // '+name+', Props funktionieren.'))
+                .then(() => bot.say('[TechnikBot] // Test abgeschlossen.'))
                 .then(() => bot.say('[TechnikBot] @sefzig, alles läuft!'))
                 .then(() => bot.say('[AndreasSefzig] Danke Cynthia. Viel Spaß :)'))
                 .then(() => 'finish');
