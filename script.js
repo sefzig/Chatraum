@@ -115,10 +115,11 @@
         receive: (bot, message) => {
             
             vorname = message.text;
-            vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
+         // vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
             
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+' '+vorname+', prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,'+vorname+')] '))
+                .then(() => bot.say(EmpfangsBot+''+vorname+', prima.'))
+                .then(() => bot.say(EmpfangsBot+'Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,'+vorname+')] '))
                 .then(() => 'nachname');
         }
     },
