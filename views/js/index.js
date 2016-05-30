@@ -667,7 +667,7 @@
              else if (name == "email")    { update = { email:     wert_neu }; }
              else              { update = { properties: { name: wert_neu } }; } 
              window.Smooch.updateUser(update);
-             console.log("Cookie (change): Smooch-User '"+name+"' Info: "+wert_neu);
+          // console.log("Cookie (change): Smooch-User '"+name+"' Info: "+wert_neu);
              
           });
           
@@ -811,7 +811,7 @@
              methode_neu = "an";
              left_neu = "-40%";
              breite_neu = "100%";
-             console.log("neue methode (aus): '"+methode+"'");
+          // console.log("neue methode (aus): '"+methode+"'");
              
           }
           
@@ -847,14 +847,14 @@
        var update = "";
        
        Cookies.set(name, wert, { expires: 365 }); // 1 Jahr
-       console.log("Cookie '"+name+"' gesetzt: "+wert);
+    // console.log("Cookie '"+name+"' gesetzt: "+wert);
        
        if      (id == "vorname")  { update = { givenName: wert }; }
        else if (id == "nachname") { update = { surname:   wert }; }
        else if (id == "email")    { update = { email:     wert }; }
        else              { update = { properties: { id: wert } }; }
        window.Smooch.updateUser(update);
-       console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
+    // console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
        
        $("#menu #formular #"+id).val(wert).trigger("change");
        

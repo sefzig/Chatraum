@@ -151,8 +151,11 @@
             
             if (emailkorrekt == true) {
             	
-            	 bot.setProp('email', email)
-                return bot.say(+' 0 ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --E-Mail, um sie zu ändern oder lassen Sie uns zurück zum --Empfang gehen. ')).then(() => 'empfang');                
+               return bot.setProp('email', email)
+                  .then(() => bot.say(EmpfangsBot+''+email+' ist eine valide E-Mail-Adresse. [Javascript:cookies(email,'+email+')] '))
+                  .then(() => bot.say(EmpfangsBot+'Schreiben Sie --E-Mail, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
+                  .then(() => 'empfang');
+               
             }
             else {
             	
