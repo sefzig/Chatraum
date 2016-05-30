@@ -99,7 +99,7 @@
             if ((antwort == "--EMAIL") ||
                 (antwort == "--E-MAIL")) {
                
-            // bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
+               bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
                dann = "emailadresse";
                
             }
