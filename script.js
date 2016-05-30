@@ -97,8 +97,8 @@ module.exports = new Script({
             stile = stile.replace(/--/g, '');
             const stil = stile;
             
-            return bot.setProp('stil', stile)
-            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stile+')] Stil: %'+stile+'%.'))
+            return bot.setProp('stil', stil)
+            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: %'+stil+'%.'))
             .then(() => bot.say('[TechnikBot] // Stile funktionieren'))
             .then(() => 'testAbgeschlossen');
             
