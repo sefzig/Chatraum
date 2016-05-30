@@ -75,6 +75,14 @@
           
        });
        
+    // Menü-Button default
+       var menuConfig = config["anwendung"]["defaultButton"];
+       if (menuConfig == "an") { $("#start").fadeIn(); }
+       
+    // Befehler-Button default
+       var befehlerConfig = config["anwendung"]["defaultBefehler"];
+       if (befehlerConfig == "an") { $("#befehle").fadeIn(); }
+       
     });
     
  // Chat starten
@@ -599,16 +607,19 @@
  // Befehler-Klicks
     function befehlerSchalter() {
        
+       console.log("befehlerSchalter()");
        var stand = $("#befehle input").val();
           
        if (stand == "i") {
-          $(".befehle").animate({ width: "toggle" });
+          $(".befehle").fadeIn();
           $("#befehle input").val("x");
        }
        else {
-          $(".befehle").animate({ width: "toggle" });
+          $(".befehle").fadeOut();
           $("#befehle input").val("i");
        }
+       
+    // $(".befehle").animate({ width: "toggle" });
        
     }
     
@@ -803,7 +814,7 @@
           $("body").attr("data-menu", methode_neu);
           
        // Button einblenden
-          window.setTimeout(function() { $("#start input").fadeIn(300); }, 300);
+          window.setTimeout(function() { $("#start").fadeIn(300); }, 300);
           
        // Zeit speichern
           $("body").attr("data-menu-zeit", zeit);

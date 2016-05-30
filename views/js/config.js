@@ -10,7 +10,8 @@
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "nacht", // tag, robogeddon, nacht, hx
           "defaultMenu": "anderesmenu", // anderesmenu, robogeddon
-          "defaultButton": "an", // an, aus
+          "defaultButton": "aus", // an, aus
+          "defaultBefehler": "an", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/ChatraumCdn/dateien/"
           
        },
