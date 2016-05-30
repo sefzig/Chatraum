@@ -3,21 +3,30 @@
 const Script = require('smooch-bot').Script;
 
 module.exports = new Script({
+    
     processing: {
+        
         prompt: (bot) => bot.say('[TechnikBot] Nicht so schnell bitte!'),
+        
         receive: () => 'processing'
     },
 
     start: {
+        
         receive: (bot) => {
+            
             return bot.say('[TechnikBot] Hallo, ich bin Cynthia, Technik-Bot.')
             .then(() => bot.say('[TechnikBot] // Node.js funktioniert'))
             .then(() => 'askName');
+            
         }
+        
     },
 
     askName: {
+        
         prompt: (bot) => bot.say('[TechnikBot] Wie heissen Sie?'),
+        
         receive: (bot, message) => {
             
             const name = message.text;
@@ -28,15 +37,18 @@ module.exports = new Script({
             .then(() => 'testBefehl');
             
         }
+        
     },
 
     testBefehl: {
+        
         prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie diesen --Befehl!'),
+        
         receive: (bot, message) => {
             
             const befehl = message.text;
             
-            if (befehl == "Befehl") {
+            if (befehl == "--Befehl") {
                
                return bot.setProp('befehl', befehl)
                .then(() => bot.say('[TechnikBot] Danke.'))
@@ -55,10 +67,13 @@ module.exports = new Script({
             }
             
         }
+        
     },
 
     testMenu: {
+        
         prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie --Menü!'),
+        
         receive: (bot, message) => {
             
             const menu = message.text;
@@ -69,13 +84,18 @@ module.exports = new Script({
             .then(() => 'testStil');
             
         }
+        
     },
 
     testStil: {
+        
         prompt: (bot) => bot.say('[TechnikBot] Welchen Stil wollen Sie? --Tag oder --Nacht?'),
+        
         receive: (bot, message) => {
             
             const stil = message.text;
+            stil = stil.replace(/ /g,"");
+            stil = stil.replace("--","");
             
             return bot.setProp('stil', stil)
             .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: '+stil+'.'))
@@ -83,25 +103,36 @@ module.exports = new Script({
             .then(() => 'testAbgeschlossen');
             
         }
+        
     },
 
     testAbgeschlossen: {
+    	
         prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie nocheinmal etwas!'),
+        
         receive: (bot, message) => {
+            
             return bot.getProp('name')
             .then((name) => bot.say('[TechnikBot] Ich erinnere mich an Sie, '+name+'.'))
             .then(() => bot.say('[TechnikBot] // Props funktionieren'))
             .then(() => bot.say('[TechnikBot] @sefzig, alles läuft!'))
             .then(() => bot.say('[AndreasSefzig] Danke Cynthia. Viel Spaß :)'))
             .then(() => 'finish');
+            
         }
+        
     },
 
     finish: {
+    	
         receive: (bot, message) => {
+            
             return bot.getProp('name')
             .then((name) => bot.say('[TechnikBot] '+name+', mehr hat mir Andreas nicht beigebracht...'))
             .then(() => 'finish');
+            
         }
+        
     }
+    
 });
