@@ -209,7 +209,7 @@
        // Template einsetzen
           selektor = "#sk-footer";
           $(selektor).append(template);
-          console.log("Setze Befehler-Leiste ein: "+template);
+       // console.log("Setze Befehler-Leiste ein: "+template);
           
        // Status merken
           $("body").attr("data-befehler", "true");
@@ -432,13 +432,6 @@
              $(".sk-from.bot"+zufall).html(name);
              $(".sk-msg-avatar.bot"+zufall).attr("src", pfad);
              
-             window.setTimeout(function() { 
-                
-                $(".sk-from.bot"+zufall).wrap(wrap);
-                $(".sk-msg-avatar.bot"+zufall).wrap(wrap);
-                
-             }, 1000);
-             
           // Neuen Text anpassen
              text_string = text_string.replace("["+kurzel+"] ","");
              
@@ -448,6 +441,13 @@
              $("#seite > #menu li button").removeClass("aktiv");
           // $("#seite > #menu li button:contains('"+id+"')").addClass("aktiv");
              $("#seite > #menu li button").filter(function() { return ($(this).text() === id); }).addClass("aktiv");
+             
+             window.setTimeout(function() { 
+                
+                $(".sk-from.bot"+zufall).wrap(wrap);
+                $(".sk-msg-avatar.bot"+zufall).wrap(wrap);
+                
+             }, 1000);
              
           }
           
@@ -505,19 +505,12 @@
           
        // Bots anpassen
           var text_merken = text_neu;
+          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");
           text_neu = inhalt("bot", text_neu, "SefzigBot",      "Andreas Sefzigs Bot",    zufall, "Sefzig");
           
-          text_neu = inhalt("bot", text_neu, "LinkBot",        "Link Bot",               zufall, "Link");
-          text_neu = inhalt("bot", text_neu, "TextBot",        "Text Bot",               zufall, "Text");
-          text_neu = inhalt("bot", text_neu, "SlackBot",       "Slack Bot",              zufall, "Slack");
-          text_neu = inhalt("bot", text_neu, "AndreasSefzig",  "Andreas Sefzig",         zufall, "Sefzig");
-          
           text_neu = inhalt("bot", text_neu, "EmpfangsBot",    "Alice, Empfangs-Bot",    zufall, "Empfang");
-          text_neu = inhalt("bot", text_neu, "KreationsBot",   "Doris, Kreations-Bot",   zufall, "Kreation");
-          text_neu = inhalt("bot", text_neu, "BeratungsBot",   "Barbara, Beratungs-Bot", zufall, "Beratung");
-          text_neu = inhalt("bot", text_neu, "TechnikBot",     "Cynthia, Technik-Bot",   zufall, "Technik");
-          text_neu = inhalt("bot", text_neu, "KonzeptionsBot", "Erika, Konzeptions-Bot", zufall, "Konzeption");
-          text_neu = inhalt("bot", text_neu, "StrategieBot",   "Feline, Strategie-Bot",  zufall, "Strategie");
+          text_neu = inhalt("bot", text_neu, "VerkaufsBot",    "Barbara, Verkaufs-Bot",  zufall, "Verkauf");
+          text_neu = inhalt("bot", text_neu, "MarketingBot",   "Cynthia, Marketing-Bot", zufall, "Marketing");
           
        // Bots zusammenfassen
           window.setTimeout(function() { 
@@ -540,7 +533,7 @@
                    
                 // Pfeilchen davor verbergen
                    $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
-                   $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
+                // $('head').append("<style>.sk-msg.frei::after{ border: none !important }</style>");
                    
                 }
                 else {
@@ -589,7 +582,7 @@
        
     // Template ausfüllen
        template = template.replace(/%inhalt%/g, inhalt);
-       console.log("Setze neuen Befehler ein: "+template);
+    // console.log("Setze neuen Befehler ein: "+template);
        
     // Template einsetzen
        selektor = ".befehle > div";
@@ -611,7 +604,7 @@
  // Befehler-Klicks
     function befehlerSchalter(methode) {
        
-       console.log("befehlerSchalter('"+methode+"')");
+     // console.log("befehlerSchalter('"+methode+"')");
        if ((!methode) || (methode == "")) {
           
           var stand = $("#befehle input").val();
@@ -739,10 +732,15 @@
  // Stil (ggfls. auswählen und) anwenden
     function stil(auswahl) {
        
-       zufall = 3;
+       zufall = 4;
        dir = "stil";
        
-       if ((!auswahl) || (auswahl == "")) {
+       if ((auswahl) && (auswahl != "")) {
+          
+          auswahl = auswahl.replace("--", "");
+          
+       }
+       else {
           
           auswahl = getParameters("stil");
           
@@ -754,6 +752,7 @@
        
        }
        
+       auswahl = auswahl.toLowerCase();
        ladenCss(auswahl, zufall, dir);
        $("body").attr("data-stil", auswahl);
        

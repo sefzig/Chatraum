@@ -462,14 +462,12 @@
        overflow-x: hidden;
        white-space: nowrap;
     }
-    
     .befehle > div {
        width: 1000px;
        background-color: transparent;
        overflow-y: hidden;
        overflow-x: auto;
     }
-    
     .befehle > div > .befehler {
        position: relative;
        float: left;
@@ -486,7 +484,6 @@
        border-radius: 2px;
        cursor: pointer;
     }
-    
     .befehle > div > .befehler > span {
        margin-left: 1px;
     }
@@ -499,7 +496,6 @@
        right: 89px;
        border: 0px black solid;
     }
-    
     #befehle input {
        width: 20px;
        height: 20px;
@@ -515,7 +511,6 @@
       -ms-transition: background-color 500ms linear;
        transition: background-color 500ms linear;
     }
-    
     #befehle input.aktiv {
        background-color: #00aeff;
       -webkit-transition: background-color 500ms linear;
@@ -523,5 +518,13 @@
       -o-transition: background-color 500ms linear;
       -ms-transition: background-color 500ms linear;
        transition: background-color 500ms linear;
+    }
+    
+ /* ----------------- */
+ /* Whitelabel */
+ /* ----------------- */
+    
+    #sk-container.sk-embedded #sk-conversation .sk-row.sk-left-row .sk-msg-wrapper .sk-msg {
+      color: white;
     }
     

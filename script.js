@@ -6,7 +6,7 @@ module.exports = new Script({
     
     processing: {
         
-        prompt: (bot) => bot.say('[TechnikBot] Nicht so schnell bitte!'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Nicht so schnell bitte!'),
         
         receive: () => 'processing'
     },
@@ -15,8 +15,8 @@ module.exports = new Script({
         
         receive: (bot) => {
             
-            return bot.say('[TechnikBot] Hallo, ich bin Cynthia, Technik-Bot.')
-            .then(() => bot.say('[TechnikBot] // Node.js funktioniert'))
+            return bot.say('[EmpfangsBot] Hallo, ich bin Alice, Empfangs-Bot.')
+            .then(() => bot.say('[EmpfangsBot] // Node.js funktioniert'))
             .then(() => 'askName');
             
         }
@@ -25,15 +25,15 @@ module.exports = new Script({
 
     askName: {
         
-        prompt: (bot) => bot.say('[TechnikBot] Wie heissen Sie?'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Wie heissen Sie?'),
         
         receive: (bot, message) => {
             
             const name = message.text;
             
             return bot.setProp('name', name)
-            .then(() => bot.say('[TechnikBot] '+name+', prima.'))
-            .then(() => bot.say('[TechnikBot] // Skript funktioniert'))
+            .then(() => bot.say('[EmpfangsBot] '+name+', prima.'))
+            .then(() => bot.say('[EmpfangsBot] // Skript funktioniert'))
             .then(() => 'testBefehl');
             
         }
@@ -42,7 +42,7 @@ module.exports = new Script({
 
     testBefehl: {
         
-        prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie diesen --Befehl!'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Bitte sagen Sie diesen --Befehl!'),
         
         receive: (bot, message) => {
             
@@ -58,8 +58,8 @@ module.exports = new Script({
             if (befehl == "BEFEHL") {
                
                return bot.setProp('befehl', befehlen)
-               .then(() => bot.say('[TechnikBot] Danke.'))
-               .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
+               .then(() => bot.say('[EmpfangsBot] Danke.'))
+               .then(() => bot.say('[EmpfangsBot] // Befehle funktionieren'))
                .then(() => 'testMenu');
             	
             }
@@ -67,8 +67,8 @@ module.exports = new Script({
             else {
                
                return bot.setProp('befehl', befehlen)
-               .then(() => bot.say('[TechnikBot] Nicht der --Befehl, aber egal.'))
-               .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
+               .then(() => bot.say('[EmpfangsBot] Nicht der --Befehl, aber egal.'))
+               .then(() => bot.say('[EmpfangsBot] // Befehle funktionieren'))
                .then(() => 'testMenu');
             	
             }
@@ -79,15 +79,15 @@ module.exports = new Script({
 
     testMenu: {
         
-        prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie --Menü!'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Bitte sagen Sie --Menü!'),
         
         receive: (bot, message) => {
             
             const menu = message.text;
             
             return bot.setProp('menu', menu)
-            .then(() => bot.say('[TechnikBot] [Javascript:menu(an)] Menü umgeschaltet.'))
-            .then(() => bot.say('[TechnikBot] // Menü funktioniert'))
+            .then(() => bot.say('[EmpfangsBot] [Javascript:menu(an)] Menü umgeschaltet.'))
+            .then(() => bot.say('[EmpfangsBot] // Menü funktioniert'))
             .then(() => 'testStil');
             
         }
@@ -96,7 +96,7 @@ module.exports = new Script({
 
     testStil: {
         
-        prompt: (bot) => bot.say('[TechnikBot] Welchen Stil wollen Sie? --Tag oder --Nacht?'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Welchen Stil wollen Sie? --Tag oder --Nacht?'),
         
         receive: (bot, message) => {
             
@@ -106,8 +106,8 @@ module.exports = new Script({
             const stil = stile;
             
             return bot.setProp('stil', stil)
-            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: '+stil+'.'))
-            .then(() => bot.say('[TechnikBot] // Stile funktionieren'))
+            .then(() => bot.say('[EmpfangsBot] [Javascript:stil('+stil+')] Stil: '+stil+'.'))
+            .then(() => bot.say('[EmpfangsBot] // Stile funktionieren'))
             .then(() => 'testAbgeschlossen');
             
         }
@@ -116,14 +116,14 @@ module.exports = new Script({
 
     testAbgeschlossen: {
     	
-        prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie nochmal etwas!'),
+        prompt: (bot) => bot.say('[EmpfangsBot] Bitte sagen Sie nochmal etwas!'),
         
         receive: (bot, message) => {
             
-            return bot.getProp('name').then((name) => bot.say('[TechnikBot] Ich erinnere mich an Sie, '+name+'.'))
-            .then(() => bot.say('[TechnikBot] // Props funktionieren'))
-            .then(() => bot.say('[TechnikBot] @sefzig, alles läuft.'))
-            .then(() => bot.say('[AndreasSefzig] Danke Cynthia.'))
+            return bot.getProp('name').then((name) => bot.say('[EmpfangsBot] Ich erinnere mich an Sie, '+name+'.'))
+            .then(() => bot.say('[EmpfangsBot] // Props funktionieren'))
+            .then(() => bot.say('[EmpfangsBot] @sefzig, alles läuft.'))
+            .then(() => bot.say('[AndreasSefzig] Danke Alice.'))
             .then(() => bot.getProp('name')).then((name) => bot.say('[AndreasSefzig] Und Ihnen viel Spaß, '+name+'!'))
             .then(() => 'finish');
             
@@ -135,7 +135,7 @@ module.exports = new Script({
     	
         receive: (bot, message) => {
             
-            return bot.say('[TechnikBot] Mehr als Testen kann ich nicht...')
+            return bot.say('[EmpfangsBot] Mehr als Testen kann ich nicht...')
             .then(() => 'finish');
             
         }

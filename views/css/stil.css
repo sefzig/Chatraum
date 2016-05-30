@@ -16,10 +16,10 @@
     body[data-stil="hacks"]      #menu h2, #menu h3, #menu h4, #menu h5, #menu h6 { font-weight: 900; }
     
  /* Button-Farben */
-    body[data-stil="tag"]        #menu div > div button { background-color: #00aeff; color: white; }
-    body[data-stil="robogeddon"] #menu div > div button { background-color: #00aeff; color: white; }
-    body[data-stil="nacht"]      #menu div > div button { background-color: #00aeff; color: black; }
-    body[data-stil="hacks"]      #menu div > div button { background-color: #00ff00; color: black; }
+    body[data-stil="tag"]        #menu div > div button { background-color: #00aeff; color:   white; }
+    body[data-stil="robogeddon"] #menu div > div button { background-color: #00aeff; color:   white; }
+    body[data-stil="nacht"]      #menu div > div button { background-color: #00aeff; color:   black; }
+    body[data-stil="hacks"]      #menu div > div button { background-color: #00ff00; color:   black; }
     
  /* Button-Farben: aktiv */
     body[data-stil="tag"]        #menu div > div button.aktiv { background-color:   white !important; color:   black !important; }
@@ -28,20 +28,20 @@
     body[data-stil="hacks"]      #menu div > div button.aktiv { background-color: #ff00ff !important; color:   black !important; }
     
  /* Input-Farben */
-    body[data-stil="tag"]        #menu #formular input { background-color: #ff00ff; color: white; }
-    body[data-stil="robogeddon"] #menu #formular input { background-color: #ff00ff; color: white; }
-    body[data-stil="nacht"]      #menu #formular input { background-color: #ff00ff; color: black; }
-    body[data-stil="hacks"]      #menu #formular input { background-color:    gray; color: black; }
+    body[data-stil="tag"]        #menu #formular input { background-color: #ff00ff; color:   white; }
+    body[data-stil="robogeddon"] #menu #formular input { background-color: #ff00ff; color:   white; }
+    body[data-stil="nacht"]      #menu #formular input { background-color: #ff00ff; color:   black; }
+    body[data-stil="hacks"]      #menu #formular input { background-color:    gray; color:   black; }
     
  /* ------------------- */
  /* Konversation */
  /* ------------------- */
     
  /* Hintergrundfarbe und Schriftfarbe */
-    body[data-stil="tag"]        #sk-container.sk-embedded #sk-wrapper { background-color: #eeeeee; color: black; }
-    body[data-stil="robogeddon"] #sk-container.sk-embedded #sk-wrapper { background-color:   white; color: black; }
-    body[data-stil="nacht"]      #sk-container.sk-embedded #sk-wrapper { background-color: #666666; color: black; }
-    body[data-stil="hacks"]      #sk-container.sk-embedded #sk-wrapper { background-color:   black; color: white; }
+    body[data-stil="tag"]        #sk-container.sk-embedded #sk-wrapper { background-color: #eeeeee; }
+    body[data-stil="robogeddon"] #sk-container.sk-embedded #sk-wrapper { background-color:   white; }
+    body[data-stil="nacht"]      #sk-container.sk-embedded #sk-wrapper { background-color: #666666; }
+    body[data-stil="hacks"]      #sk-container.sk-embedded #sk-wrapper { background-color:   black; }
     
  /* Scrollbar: Fläche */
     body[data-stil="tag"]        #sk-conversation::-webkit-scrollbar, body[data-stil="tag"]        #sk-conversation::-webkit-scrollbar-track { background-color: #eeeeee !important; }
