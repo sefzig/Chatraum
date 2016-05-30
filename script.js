@@ -117,7 +117,7 @@
             vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
             
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+`${vorname}, prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,`+vorname+`)] `))
+                .then(() => bot.say(EmpfangsBot+'${vorname}, prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,'+vorname+')] '))
                 .then(() => 'nachname');
         }
     },
@@ -246,7 +246,7 @@
        // Kontakt
        // -----------------
           
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ').then(() => bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'empfang');}          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(EmpfangsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(EmpfangsBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ')).then(() => 'empfang');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(EmpfangsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'empfang');}          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(EmpfangsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'empfang');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(EmpfangsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'empfang');}          
@@ -254,22 +254,22 @@
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(EmpfangsBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(EmpfangsBot+' Robogeddon sind Andreas Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Sie realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(EmpfangsBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'empfang');}          
+          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(EmpfangsBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(EmpfangsBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'empfang');}          
        // Produkte
-          if ("empfang" != "beratung") {
+          if ("empfang" != "verkauf") {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(EmpfangsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Empfang, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Mehr über unsere --Produkte folgt... ')).then(() => 'verkauf');}	       
           }
           else {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Unsere Produkte sind Ihre Chat-Bots für das Marketing. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ').then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Mehr über unsere --Produkte folgt... ').then(() => 'verkauf');}	       
           }
           
        // -----------------
        // Funktionen
        // -----------------
           
-          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(EmpfangsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(EmpfangsBot+' Ja, bestellen Sie unseren Newsletter! ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(EmpfangsBot+' Diesen Chat mobil öffnen: [Qr:http://chatraum.herokuapp.com/] ').then(() => bot.say(EmpfangsBot+' Oder öffnen Sie [Textlink:Chatraum.herokuapp.com,http://chatraum.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // Stile
           if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'empfang');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'empfang');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'empfang');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'empfang');}          
@@ -408,7 +408,7 @@
        // Kontakt
        // -----------------
           
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(VerkaufsBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ').then(() => bot.say(VerkaufsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'verkauf');}          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(VerkaufsBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(VerkaufsBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ')).then(() => 'verkauf');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(VerkaufsBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'verkauf');}          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(VerkaufsBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'verkauf');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(VerkaufsBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'verkauf');}          
@@ -416,22 +416,22 @@
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(VerkaufsBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(VerkaufsBot+' Robogeddon sind Andreas Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Sie realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(VerkaufsBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'verkauf');}          
+          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(VerkaufsBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(VerkaufsBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'verkauf');}          
        // Produkte
-          if ("verkauf" != "beratung") {
+          if ("verkauf" != "verkauf") {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Verkauf, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Verkauf, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Mehr über unsere --Produkte folgt... ')).then(() => 'verkauf');}	       
           }
           else {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Unsere Produkte sind Ihre Chat-Bots für das Marketing. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ').then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Mehr über unsere --Produkte folgt... ').then(() => 'verkauf');}	       
           }
           
        // -----------------
        // Funktionen
        // -----------------
           
-          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(VerkaufsBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(VerkaufsBot+' Ja, bestellen Sie unseren Newsletter! ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(VerkaufsBot+' Diesen Chat mobil öffnen: [Qr:http://chatraum.herokuapp.com/] ').then(() => bot.say(VerkaufsBot+' Oder öffnen Sie [Textlink:Chatraum.herokuapp.com,http://chatraum.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // Stile
           if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'verkauf');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'verkauf');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'verkauf');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'verkauf');}          
@@ -572,7 +572,7 @@
        // Kontakt
        // -----------------
           
-          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(MarketingBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ').then(() => bot.say(MarketingBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ')).then(() => 'marketing');}          
+          if (~befehl.indexOf("--KONTAKT")) { versuch = true; return bot.say(MarketingBot+' Alle unsere Kontaktwege: [Text:Kontakt,RobogeddonKontakt] ').then(() => bot.say(MarketingBot+'  Wollen Sie --telefonieren, eine --Email schreiben oder --twittern? ')).then(() => 'marketing');}          
           if (~befehl.indexOf("--TELEFON")) { versuch = true; return bot.say(MarketingBot+' Rufen Sie Andreas Sefzig an: [Telefon:+49 151 15920082] ').then(() => 'marketing');}          
           if (~befehl.indexOf("--EMAIL")) { versuch = true; return bot.say(MarketingBot+' Schreiben Sie uns eine Email: [Email:andreas.sefzig@robogeddon.de] ').then(() => 'marketing');}          
           if (~befehl.indexOf("--TWITTER")) { versuch = true; return bot.say(MarketingBot+' Senden Sie uns einen Tweet: [Link:PM in Twitter öffnen,RobogeddonTweet] ').then(() => 'marketing');}          
@@ -580,22 +580,22 @@
        // Über uns
        // -----------------
           
-          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(MarketingBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(MarketingBot+' Robogeddon sind Andreas Sefzig und eine lose Gruppe freier Kreativer - und natürlich wir, die Bots! Sie realisieren Chat-Lösungen für die interne und externe Unternehmens-Kommunikation. [Text:Agenturprofil,RobogeddonAgentur] ')).then(() => bot.say(MarketingBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'marketing');}          
+          if (~befehl.indexOf("--CHATRAUM")) { versuch = true; return bot.say(MarketingBot+' Der Chatraum ist ein Produkt der Chatbot-Agentur #Robogeddon. ').then(() => bot.say(MarketingBot+' Lassen Sie uns über unsere --Produkte sprechen. Oder wollen Sie eine --Beratung? ')).then(() => 'marketing');}          
        // Produkte
-          if ("marketing" != "beratung") {
+          if ("marketing" != "verkauf") {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(MarketingBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Marketing, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Unsere Produkte sind Ihre Chat-Bots. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ')).then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(MarketingBot+' Die Produkte lassen Sie sich besser von Barbara erklären. Schreiben Sie --Marketing, um wieder mit mir zu sprechen. ').then(() => bot.say(VerkaufsBot+' Hallo! Mehr über unsere --Produkte folgt... ')).then(() => 'verkauf');}	       
           }
           else {
           	 
-             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Unsere Produkte sind Ihre Chat-Bots für das Marketing. Wir bieten tatkräftige Unterstützung als --Leistung an und entwickeln ständig weitere technische --Lösungen. ').then(() => 'verkauf');}	       
+             if (~befehl.indexOf("--PRODUKT")) { versuch = true; return bot.say(VerkaufsBot+' Mehr über unsere --Produkte folgt... ').then(() => 'verkauf');}	       
           }
           
        // -----------------
        // Funktionen
        // -----------------
           
-          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(MarketingBot+' Ja, bestellen Sie unseren Newsletter! Wie heißen Sie mit Vornamen? ').then(() => 'vorname');}          
+          if (~befehl.indexOf("--NEWSLETTER")) { versuch = true; return bot.say(MarketingBot+' Ja, bestellen Sie unseren Newsletter! ').then(() => 'vorname');}          
           if (~befehl.indexOf("--MOBIL")) { versuch = true; return bot.say(MarketingBot+' Diesen Chat mobil öffnen: [Qr:http://chatraum.herokuapp.com/] ').then(() => bot.say(MarketingBot+' Oder öffnen Sie [Textlink:Chatraum.herokuapp.com,http://chatraum.herokuapp.com] in Ihrem mobilen Browser. ')).then(() => 'empfang');}          
        // Stile
           if (~befehl.indexOf("--TAG")) { versuch = true; return bot.say(MarketingBot+' [Javascript:stil(tag)] Stil: Tag. ').then(() => 'marketing');}          if (~befehl.indexOf("--NACHT")) { versuch = true; return bot.say(MarketingBot+' [Javascript:stil(nacht)] Stil: Nacht. ').then(() => 'marketing');}          if (~befehl.indexOf("--ROBOS")) { versuch = true; return bot.say(MarketingBot+' [Javascript:stil(robogeddon)] Stil: Robogeddon. ').then(() => 'marketing');}          if (~befehl.indexOf("--HX")) { versuch = true; return bot.say(MarketingBot+' [Javascript:stil(hacks)] Stil: Hx. ').then(() => 'marketing');}          
@@ -730,4 +730,4 @@
        }
        
     }
-       
+      
