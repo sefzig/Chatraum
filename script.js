@@ -95,10 +95,11 @@ module.exports = new Script({
             
             var stile = message.text;
             stile = stile.replace(/--/g, '');
+            stile = stile.replace(/ /g, '');
             const stil = stile;
             
             return bot.setProp('stil', stil)
-            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: %'+stil+'%.'))
+            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: '+stil+'.'))
             .then(() => bot.say('[TechnikBot] // Stile funktionieren'))
             .then(() => 'testAbgeschlossen');
             
@@ -117,7 +118,7 @@ module.exports = new Script({
             .then(() => bot.say('[TechnikBot] // Props funktionieren'))
             .then(() => bot.say('[TechnikBot] @sefzig, alles läuft!'))
             .then(() => bot.say('[AndreasSefzig] Danke Cynthia.'))
-            .then(() => bot.say('[AndreasSefzig] '+name+', viel Spaß :)'))
+            .then((name) => bot.say('[AndreasSefzig] '+name+', viel Spaß :)'))
             .then(() => 'finish');
             
         }
