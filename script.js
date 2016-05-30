@@ -125,7 +125,8 @@ module.exports = new Script({
             .then(() => bot.say('[TechnikBot] // Props funktionieren'))
             .then(() => bot.say('[TechnikBot] @sefzig, alles läuft!'))
             .then(() => bot.say('[AndreasSefzig] Danke Cynthia.'))
-            .then((name) => bot.say('[AndreasSefzig] '+JSON.stringify(name)+', viel Spaß :)'))
+            .then(() => bot.getProp('name'))
+            .then((name) => bot.say('[AndreasSefzig] '+name+', viel Spaß :)'))
             .then(() => 'finish');
             
         }
