@@ -151,18 +151,12 @@
             
             if (emailkorrekt == true) {
             	
-               return bot.setProp('email', email)
-                  .then(() => bot.say(EmpfangsBot+''+email+' ist eine valide E-Mail-Adresse. [Javascript:cookies(email,'+email+')] '))
-                  .then(() => bot.say(EmpfangsBot+'Schreiben Sie --E-Mail, um sie zu ändern. Oder lassen Sie uns zurück zum --Empfang gehen.'))
-                  .then(() => 'empfang');
-               
+            	 bot.setProp('email', email)
+                return bot.say(+' 0 ').then(() => bot.say(EmpfangsBot+' Schreiben Sie --E-Mail, um sie zu ändern oder lassen Sie uns zurück zum --Empfang gehen. ')).then(() => 'empfang');                
             }
             else {
             	
-               return bot.say(EmpfangsBot+''+email+' ist keine valide E-Mail-Adresse. ')
-                  .then(() => bot.say(EmpfangsBot+'Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren.'))
-                  .then(() => 'emailadresse');
-               
+                return bot.say(+' 0 ').then(() => bot.say(EmpfangsBot+' Bitte geben Sie Ihre E-Mail-Adresse nochmal ein - oder lassen Sie uns zum --Empfang zurückkehren. ')).then(() => 'emailadresse');                
             }
         }
     },
