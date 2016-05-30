@@ -10,7 +10,7 @@
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "nacht", // tag, robogeddon, nacht, hx
           "defaultMenu": "anderesmenu", // anderesmenu, robogeddon
-          "defaultButton": "aus", // an, aus
+          "defaultButton": "an", // an, aus
           "defaultBefehler": "an", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/ChatraumCdn/dateien/"
           
@@ -128,8 +128,13 @@
              
              "<div class='befehle'>",
                "<div>",
-                 "",
+                 "<div class='befehler' rel='Befehle'><span onclick='befehlerKlick(\"Befehle\"); befehlerSchalter(); $(this).parent().fadeOut();'>Befehle</span><span onclick='$(this).parent().fadeOut();'> x </span> </div>",
+                 "<div class='befehler' rel='Über'   ><span onclick='befehlerKlick(\"Über\");    befehlerSchalter(); $(this).parent().fadeOut();'>Über</span><span    onclick='$(this).parent().fadeOut();'> x </span> </div>",
+                 "<div class='befehler' rel='Hallo'  ><span onclick='befehlerKlick(\"Hallo\");   befehlerSchalter(); $(this).parent().fadeOut();'>Hallo</span><span   onclick='$(this).parent().fadeOut();'> x </span> </div>",
                "</div>",
+             "</div>",
+             "<div id='befehle' style=''>",
+               "<input tabindex='99' type='button' value='i' onclick='befehlerSchalter();' />",
              "</div>"
              
           ],
@@ -140,7 +145,7 @@
              "<div class='befehler' ",
                 "rel='%inhalt%' >",
                 "<span onclick='",
-                  "befehlerKlick(\"%inhalt%\"); befehlerSchalter(); $(this).parent().animate({ width: \"0px\" });",
+                  "befehlerKlick(\"%inhalt%\"); befehlerSchalter(); $(this).parent().fadeOut();",
                 "'>",
                   "%inhalt%",
                 "</span>",

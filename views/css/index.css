@@ -452,13 +452,12 @@
        display: none;
        position: fixed; 
        z-index: 10001 !important;
-       bottom: 18px; 
-       left: 35px; 
+       bottom: 17px; 
+       left: 34px; 
        right: 117px; 
-       height: 20px;
+       height: 27px;
        padding: 5px;
        padding-top: 0px;
-       background: #ffffff;
        overflow-y: hidden;
        overflow-x: hidden;
        white-space: nowrap;
@@ -480,7 +479,7 @@
        margin-bottom: 2px;
        padding-top: 3px;
        padding-right: 5px;
-       padding-bottom: 3px;
+       padding-bottom: 2px;
        padding-left: 5px;
        background-color: #00aeff;
        color: #ffffff;

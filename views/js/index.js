@@ -207,7 +207,7 @@
           }
           
        // Template einsetzen
-          selektor = "#chat";
+          selektor = "#sk-footer";
           $(selektor).append(template);
           console.log("Setze Befehler-Leiste ein: "+template);
           
@@ -221,10 +221,14 @@
        // Befehler-Button anzeigen
           $("#befehle").fadeIn();
           
-          $("#sk-footer, #befehle").hover(function() {
+          selektor = "#sk-footer";
+          $(selektor).mouseenter(function() {
              $("#befehle input").addClass("aktiv");
-          }, function() {
+          });
+
+          $(selektor).mouseleave(function() {
              $("#befehle input").removeClass("aktiv");
+             befehlerSchalter("aus");
           });
           
        }
@@ -574,21 +578,21 @@
     // alert("stand: "+stand+", inhalt: "+inhalt);
     
     // Bisherigen Befehl löschen
-       $("#chat .befehler[rel='"+inhalt+"']").remove();
+       $(".befehle .befehler[rel='"+inhalt+"']").remove();
        
     // Befehler-Template laden
        template = templates["befehl"]["befehler"];
        if ($.isArray(template)) {
-             template = template.join("a-f-z");
-             template = template.replace(/a-f-z/g, "");
-          }
+          template = template.join("a-f-z");
+          template = template.replace(/a-f-z/g, "");
+       }
        
     // Template ausfüllen
        template = template.replace(/%inhalt%/g, inhalt);
        console.log("Setze neuen Befehler ein: "+template);
        
     // Template einsetzen
-       selektor = "#chat .befehle > div";
+       selektor = ".befehle > div";
        $(selektor).prepend(template);
           
     }
@@ -605,12 +609,18 @@
     }
     
  // Befehler-Klicks
-    function befehlerSchalter() {
+    function befehlerSchalter(methode) {
        
-       console.log("befehlerSchalter()");
-       var stand = $("#befehle input").val();
+       console.log("befehlerSchalter('"+methode+"')");
+       if ((!methode) || (methode == "")) {
           
-       if (stand == "i") {
+          var stand = $("#befehle input").val();
+          if (stand == "i") { methode = "an"; }
+          else { methode = "aus"; }
+       
+       }
+       
+       if (methode == "an") {
           $(".befehle").fadeIn();
           $("#befehle input").val("x");
        }
@@ -618,8 +628,6 @@
           $(".befehle").fadeOut();
           $("#befehle input").val("i");
        }
-       
-    // $(".befehle").animate({ width: "toggle" });
        
     }
     

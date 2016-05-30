@@ -122,8 +122,26 @@
     body[data-stil="hacks"]      #sk-footer { background: #000000 !important; color:   white !important; }
     
  /* Eingaben */
-    body[data-stil="tag"]        #sk-footer .message-input { background-color: #ffffff !important; color:   gray !important; border: #ffffff 1px solid; } body[data-stil="tag"]        #sk-footer .send.active { color:  gray !important; }
-    body[data-stil="robogeddon"] #sk-footer .message-input { background-color: #ffffff !important; color:  black !important; border: #ffffff 1px solid; } body[data-stil="robogeddon"] #sk-footer .send.active { color: black !important; }
-    body[data-stil="nacht"]      #sk-footer .message-input { background-color: #666666 !important; color: silver !important; border: #666666 1px solid; } body[data-stil="nacht"]      #sk-footer .send.active { color: white !important; }
-    body[data-stil="hacks"]      #sk-footer .message-input { background-color: #000000 !important; color: silver !important; border: #111111 1px solid; } body[data-stil="hacks"]      #sk-footer .send.active { color: white !important; }
+    body[data-stil="tag"]        #sk-footer .message-input, body[data-stil="tag"]        .befehle > div { background-color: #ffffff !important; color:   gray !important; border: #ffffff 1px solid; } body[data-stil="tag"]        #sk-footer .send.active { color:  gray !important; }
+    body[data-stil="robogeddon"] #sk-footer .message-input, body[data-stil="robogeddon"] .befehle > div { background-color: #ffffff !important; color:  black !important; border: #ffffff 1px solid; } body[data-stil="robogeddon"] #sk-footer .send.active { color: black !important; }
+    body[data-stil="nacht"]      #sk-footer .message-input, body[data-stil="nacht"]      .befehle > div { background-color: #666666 !important; color: silver !important; border: #666666 1px solid; } body[data-stil="nacht"]      #sk-footer .send.active { color: white !important; }
+    body[data-stil="hacks"]      #sk-footer .message-input, body[data-stil="hacks"]      .befehle > div { background-color: #000000 !important; color: silver !important; border: #111111 1px solid; } body[data-stil="hacks"]      #sk-footer .send.active { color: white !important; }
+    
+ /* Befehler-Farbe */
+    body[data-stil="tag"]        .befehler { background-color: #00aeff !important; color:   white; }
+    body[data-stil="robogeddon"] .befehler { background-color: #00aeff !important; color:   white; }
+    body[data-stil="nacht"]      .befehler { background-color: #00aeff !important; color:   black; }
+    body[data-stil="hacks"]      .befehler { background-color: #00ff00 !important; color:   black; }
+    
+ /* Befehler-Button */
+    body[data-stil="tag"]        #befehle input { background-color: #cccccc !important; color: #ffffff; }
+    body[data-stil="robogeddon"] #befehle input { background-color: #dddddd !important; color: #ffffff; }
+    body[data-stil="nacht"]      #befehle input { background-color: #333333 !important; color: #666666; }
+    body[data-stil="hacks"]      #befehle input { background-color: #000000 !important; color: #000000; }
+    
+ /* Befehler-Button aktiv */
+    body[data-stil="tag"]        #befehle input.aktiv { background-color: #00aeff !important; color:   white; }
+    body[data-stil="robogeddon"] #befehle input.aktiv { background-color: #00aeff !important; color:   white; }
+    body[data-stil="nacht"]      #befehle input.aktiv { background-color: #00aeff !important; color:   black; }
+    body[data-stil="hacks"]      #befehle input.aktiv { background-color: #00ff00 !important; color:   black; }
     
