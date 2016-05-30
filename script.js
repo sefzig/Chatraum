@@ -98,7 +98,7 @@
             }
             if ((antwort == "--EMAIL")) {
                
-               bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
+            // bot.say(EmpfangsBot+'Wir geben Ihre Adresse nicht weiter.');
                dann = "emailadresse";
                
             }
@@ -117,7 +117,7 @@
             vorname = vorname.toLowerCase().replace( /\b./g, function(a){ return a.toUpperCase(); } );
             
             return bot.setProp('vorname', vorname)
-                .then(() => bot.say(EmpfangsBot+''+vorname+', prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,'+vorname+')] '))
+                .then(() => bot.say(EmpfangsBot+' '+vorname+', prima. Und wie heissen Sie mit Nachnamen? [Javascript:cookies(vorname,'+vorname+')] '))
                 .then(() => 'nachname');
         }
     },
