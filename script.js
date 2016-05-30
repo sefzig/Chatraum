@@ -32,7 +32,7 @@ module.exports = new Script({
             const name = message.text;
             
             return bot.setProp('name', name)
-            .then(() => bot.say('[TechnikBot] Prima, wir werden Sie von nun an '+name+' nennen.'))
+            .then(() => bot.say('[TechnikBot] Prima, '+name+'.'))
             .then(() => bot.say('[TechnikBot] // Node.js richtig konfiguriert'))
             .then(() => 'testBefehl');
             
@@ -93,11 +93,12 @@ module.exports = new Script({
         
         receive: (bot, message) => {
             
-            const stil = message.text;
-            stil = stil.replace("--", "");
+            stile = message.text;
+            stile = stile.replace("--", "");
+            const stil = stile;
             
-            return bot.setProp('stil', stil)
-            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: %'+stil+'%.'))
+            return bot.setProp('stil', stile)
+            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stile+')] Stil: %'+stile+'%.'))
             .then(() => bot.say('[TechnikBot] // Stile funktionieren'))
             .then(() => 'testAbgeschlossen');
             
@@ -107,7 +108,7 @@ module.exports = new Script({
 
     testAbgeschlossen: {
     	
-        prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie nocheinmal etwas!'),
+        prompt: (bot) => bot.say('[TechnikBot] Bitte sagen Sie nochmal etwas!'),
         
         receive: (bot, message) => {
             
