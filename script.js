@@ -46,11 +46,18 @@ module.exports = new Script({
         
         receive: (bot, message) => {
             
-            const befehl = message.text;
+            var befehle = message.text;
+            befehle = befehle.replace(/--/g, "");
+            befehle = befehle.replace(/ /g, "");
             
-            if (befehl == "--Befehl") {
+            var befehl = befehle;
+            befehl = befehl.toUpperCase();
+            
+            const befehle = befehle;
+            
+            if (befehl == "BEFEHL") {
                
-               return bot.setProp('befehl', befehl)
+               return bot.setProp('befehl', befehle)
                .then(() => bot.say('[TechnikBot] Danke.'))
                .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
                .then(() => 'testMenu');
@@ -59,7 +66,7 @@ module.exports = new Script({
             
             else {
                
-               return bot.setProp('befehl', befehl)
+               return bot.setProp('befehl', befehle)
                .then(() => bot.say('[TechnikBot] Nicht der --Befehl, aber egal.'))
                .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
                .then(() => 'testMenu');

@@ -8,7 +8,7 @@
           "id": "Chatraum", // Robogeddon, Sefzigbot, Chatraum
           "name": "Chatraum",
           "defaultAnsicht": "chat", // chat, daten
-          "defaultStil": "nacht", // tag, robogeddon, nacht, hx
+          "defaultStil": "robogeddon", // tag, robogeddon, nacht, hx
           "defaultMenu": "anderesmenu", // anderesmenu, robogeddon
           "defaultButton": "an", // an, aus
           "defaultBefehler": "an", // an, aus
