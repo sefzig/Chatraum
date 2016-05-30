@@ -53,11 +53,11 @@ module.exports = new Script({
             var befehl = befehle;
             befehl = befehl.toUpperCase();
             
-            const befehle = befehle;
+            const befehlen = befehle;
             
             if (befehl == "BEFEHL") {
                
-               return bot.setProp('befehl', befehle)
+               return bot.setProp('befehl', befehlen)
                .then(() => bot.say('[TechnikBot] Danke.'))
                .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
                .then(() => 'testMenu');
@@ -66,7 +66,7 @@ module.exports = new Script({
             
             else {
                
-               return bot.setProp('befehl', befehle)
+               return bot.setProp('befehl', befehlen)
                .then(() => bot.say('[TechnikBot] Nicht der --Befehl, aber egal.'))
                .then(() => bot.say('[TechnikBot] // Befehle funktionieren'))
                .then(() => 'testMenu');
