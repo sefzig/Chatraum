@@ -93,7 +93,7 @@ module.exports = new Script({
         
         receive: (bot, message) => {
             
-            stile = message.text;
+            var stile = message.text;
             stile = stile.replace(/--/g, '');
             const stil = stile;
             
