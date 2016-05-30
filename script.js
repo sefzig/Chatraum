@@ -4,23 +4,25 @@ const Script = require('smooch-bot').Script;
 
 module.exports = new Script({
     processing: {
-        prompt: (bot) => bot.say('Nicht so schnell bitte!'),
+        prompt: (bot) => bot.say('[TechnikBot] Nicht so schnell bitte!'),
         receive: () => 'processing'
     },
 
     start: {
         receive: (bot) => {
-            return bot.say('Hi! I am Smooch Bot! Mach einen --Test.')
+            return bot.say('[TechnikBot] Hallo, ich bin Cynthia, der Technik-Bot.')
                 .then(() => 'askName');
         }
     },
 
     askName: {
-        prompt: (bot) => bot.say('What is your name?'),
+        prompt: (bot) => bot.say('[TechnikBot] Wie heissen Sie?'),
         receive: (bot, message) => {
             const name = message.text;
             return bot.setProp('name', name)
-                .then(() => bot.say('Great! I will --call you '+name+' Is that OK? %[That is fine](postback:yes) %[Please dont](postback:no)'))
+                .then(() => bot.say('[TechnikBot] Prima, wir nennen Sie von nun an '+name+'.'))
+                .then(() => bot.say('[TechnikBot] Andreas, alles läuft!'))
+                .then(() => bot.say('[AndreasSefzig] Viel Spaß :)'))
                 .then(() => 'finish');
         }
     },
@@ -28,7 +30,7 @@ module.exports = new Script({
     finish: {
         receive: (bot, message) => {
             return bot.getProp('name')
-                .then((name) => bot.say('Sorry '+name+', my --creator did not teach me how to do anything else!'))
+                .then((name) => bot.say('[TechnikBot] '+name+', mehr hat mir Andreas nicht beigebracht...'))
                 .then(() => 'finish');
         }
     }
