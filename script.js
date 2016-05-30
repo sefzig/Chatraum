@@ -94,11 +94,9 @@ module.exports = new Script({
         receive: (bot, message) => {
             
             const stil = message.text;
-            stil = stil.replace(/ /g,"");
-            stil = stil.replace("--","");
             
             return bot.setProp('stil', stil)
-            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: '+stil+'.'))
+            .then(() => bot.say('[TechnikBot] [Javascript:stil('+stil+')] Stil: %'+stil+'%.'))
             .then(() => bot.say('[TechnikBot] // Stile funktionieren'))
             .then(() => 'testAbgeschlossen');
             
