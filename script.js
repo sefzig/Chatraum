@@ -32,7 +32,7 @@ module.exports = new Script({
             const name = message.text;
             
             return bot.setProp('name', name)
-            .then(() => bot.say('[TechnikBot] Prima, '+name+'.'))
+            .then(() => bot.say('[TechnikBot] '+name+', prima.'))
             .then(() => bot.say('[TechnikBot] // Skript funktioniert'))
             .then(() => 'testBefehl');
             
@@ -120,13 +120,11 @@ module.exports = new Script({
         
         receive: (bot, message) => {
             
-            return bot.getProp('name')
-            .then((name) => bot.say('[TechnikBot] Ich erinnere mich an Sie, '+name+'.'))
+            return bot.getProp('name').then((name) => bot.say('[TechnikBot] Ich erinnere mich an Sie, '+name+'.'))
             .then(() => bot.say('[TechnikBot] // Props funktionieren'))
             .then(() => bot.say('[TechnikBot] @sefzig, alles läuft.'))
             .then(() => bot.say('[AndreasSefzig] Danke Cynthia.'))
-            .then(() => bot.getProp('name'))
-            .then((name) => bot.say('[AndreasSefzig] Und Ihnen viel Spaß, '+name+'!'))
+            .then(() => bot.getProp('name')).then((name) => bot.say('[AndreasSefzig] Und Ihnen viel Spaß, '+name+'!'))
             .then(() => 'finish');
             
         }
@@ -137,8 +135,7 @@ module.exports = new Script({
     	
         receive: (bot, message) => {
             
-            return bot.getProp('name')
-            .then((name) => bot.say('[TechnikBot] '+name+', mehr als Testen kann ich nicht...'))
+            return bot.say('[TechnikBot] Mehr als Testen kann ich nicht...')
             .then(() => 'finish');
             
         }
