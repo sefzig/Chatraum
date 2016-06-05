@@ -7,12 +7,20 @@
           
           "id": "Chatraum", // Robogeddon, Sefzigbot, Chatraum
           "name": "Chatraum",
-          "defaultAnsicht": "chat", // chat, daten
-          "defaultStil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
-          "defaultMenu": "chatraum", // chatraum, robogeddon, cqt
-          "defaultButton": "aus", // an, aus
-          "defaultBefehler": "aus", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/ChatraumCdn/dateien/"
+          
+       },
+       
+    // Defaults
+       "default": {
+          
+          "ansicht": "chat", // chat, daten
+          "stil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
+          "menu": "chatraum", // chatraum, robogeddon, cqt
+          "intro": "an", // an, aus
+          "name": "an", // an, aus
+          "button": "aus", // an, aus
+          "befehler": "aus" // an, aus
           
        },
        
@@ -61,9 +69,10 @@
        "cookie": {
        	
        // Namen
-          "vorname":  ""+config["anwendung"]["id"]+"Vorname",
-          "nachname": ""+config["anwendung"]["id"]+"Nachname",
-          "email":    ""+config["anwendung"]["id"]+"Email"
+          "vorname":    ""+config["anwendung"]["id"]+"Vorname",
+          "nachname":   ""+config["anwendung"]["id"]+"Nachname",
+          "email":      ""+config["anwendung"]["id"]+"Email",
+          "gesprochen": ""+config["anwendung"]["id"]+"Gesprochen"
           
        }
        
@@ -72,12 +81,20 @@
  // Texte
     var texte = {
        
+    // Texte des Intros
+       "intro": {
+       	 
+       // Intro
+          "namenEingeben": "Wenn Sie möchten, geben Sie Ihren Namen an:"
+       	 
+       },
+       
     // Texte des Chats
        "chat": {
-       	
+       	 
        // Benutzeroberfläche
           "headerText": "Chatraum #Robogeddon",
-          "introText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen - z.B. Hallo!</span>",
+          "startText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen - z.B. Hallo!</span>",
           "inputPlaceholder": "Schreiben Sie eine Nachricht...",
           "sendButtonText": "Absenden",
           

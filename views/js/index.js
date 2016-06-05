@@ -22,14 +22,14 @@
        cookie("email");
        
     // Chat starten
-       starten = config["anwendung"]["defaultAnsicht"];
+       starten = config["default"]["ansicht"];
        ansicht = getParameters("v");
        if (ansicht == "chat")  { starten = "chat"; }
        if (ansicht == "daten") { starten = "daten"; }
        window.setTimeout(function() { start(starten); }, 100);
        
     // Benutzeroberfläche
-       selektor = "input[data-start], img[data-start], a[data-start]";
+       selektor = "input[data-start], img[data-start], a[data-start], td[data-start]";
        $(selektor).click(function(e) {
           
        // Elemente
@@ -50,7 +50,7 @@
     // Menü auswählen und anzeigen
        menue = getParameters("m");
        if ((!menue) || (menue == "")) { 
-          menue = config["anwendung"]["defaultMenu"];
+          menue = config["default"]["menu"];
        }
        $("#menu > div").css("display", "none");
        $("#menu > ."+menue).css("display", "block");
@@ -76,25 +76,39 @@
        });
        
     // Menü-Button default
-       var menuConfig = config["anwendung"]["defaultButton"];
+       var menuConfig = config["default"]["button"];
        if (menuConfig == "an") { $("#start").fadeIn(); }
        
     // Befehler-Button default
-       var befehlerConfig = config["anwendung"]["defaultBefehler"];
+       var befehlerConfig = config["default"]["befehler"];
        if (befehlerConfig == "an") { $("#befehle").fadeIn(); }
+       
+    // Intro-Texte einsetzen
+       $("#namenEingeben").html(texte["intro"]["namenEingeben"]);
        
     });
     
  // Chat starten
     function start(methode) {
        
+    // Variablen zurücksetzen
        var vorname = "";
        var nachname = "";
        var email = "";
        var sagen = "";
+       
+    // Zu Daten umleiten falls Namenzwang und Namenlos
+       var namezwang = config["default"]["name"];
+       if ((methode == "chat") && (namezwang == "an")) {
           
-    // Ansichten anpassen
-       $("#seite > #chat, #seite > #daten").fadeOut();
+          bereit = "ja";
+          vorname =  $("#vornameDaten").val();  if ((vorname  == daten["label"]["vorname"])  || (!vorname)  || (vorname  == "")) { bereit = "nein"; }
+          nachname = $("#nachnameDaten").val(); if ((nachname == daten["label"]["nachname"]) || (!nachname) || (nachname == "")) { bereit = "nein"; }
+          
+       // Methode zurücksetzen
+          if (bereit != "ja") { methode = "daten"; }
+          
+       }
        
     // Chat starten
        if (methode == "chat") {
@@ -102,21 +116,26 @@
        // Debuggen
        // console.log('\n\nNeues Gespräch\n');
           
+          var vornameZufall = "Nutzer";
+          var nachnameZufall = Math.floor(Math.random()*999999);
+          
        // Daten aus Formular übernehmen
-          vorname =  $("#vornameDaten").val();
-          nachname = $("#nachnameDaten").val();
-          email =    $("#emailDaten").val();
+          vorname =  $("#vornameDaten").val();  if (vorname  == daten["label"]["vorname"])  { vorname =  vornameZufall; }
+          nachname = $("#nachnameDaten").val(); if (nachname == daten["label"]["nachname"]) { nachname = nachnameZufall; }
+          email =    $("#emailDaten").val();    if (email    == daten["label"]["email"])    { email =    ""; }
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
           var skPromise = Smooch.init({ 
              appToken: config["smooch"]["appToken"],
              embedded: true,
+             givenName: vorname,
+             surname: nachname,
              customText: {
                 headerText:                    texte["chat"]["headerText"],
                 inputPlaceholder:              texte["chat"]["inputPlaceholder"],
                 sendButtonText:                texte["chat"]["sendButtonText"],
-                introText:                     texte["chat"]["introText"],
+                introText:                     texte["chat"]["startText"],
                 settingsText:                  texte["chat"]["settingsText"],
                 settingsReadOnlyText:          texte["chat"]["settingsReadOnlyText"],
                 settingsInputPlaceholder:      texte["chat"]["settingsInputPlaceholder"],
@@ -163,6 +182,8 @@
           // console.log('- Nutzer hat eine Nachricht gesendet');
           // $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
              
+             Cookies.set(daten["cookie"]["gesprochen"], "ja");
+             
           });
           Smooch.on('message:received', function(message) {
              
@@ -176,6 +197,9 @@
        // Konversation rendern
           anpassen();
           
+       // Ansichten anpassen
+          $("#seite > #chat, #seite > #daten").fadeOut();
+       
        // Inhalt anzeigen
           $("#seite > #"+methode).fadeIn();
        
@@ -185,32 +209,49 @@
           
        }
        
-    // Menü anzeigen starten
+    // Daten anzeigen starten
        if (methode == "daten") {
           
-       // Inhalt anzeigen
-          $("#seite > #"+methode).fadeIn();
-       
-          $('#daten input[type=text], #menu input[type=text]').on('keydown', function(e) {
+          var intro =       config["default"]["intro"];
+          var gesprochen =  Cookies.get(daten["cookie"]["gesprochen"]);
+          
+          if (gesprochen == "ja") {
              
-             if (e.which == 13) {
-                
-                start("chat");
-                e.preventDefault();
-                
-             }
+             start("chat");
              
-          });
-       
-          $('#daten input.nachname').on('keydown', function(e) {
+          }
+          else if (intro == "aus") {
              
-             if (e.which == 9) {
-                
-                e.preventDefault();
-                
-             }
+             start("chat");
              
-          });
+          }
+          else {
+	          
+          // Inhalt anzeigen
+             $("#seite > #"+methode).fadeIn();
+          
+             $('#daten input[type=text], #menu input[type=text]').on('keydown', function(e) {
+                
+                if (e.which == 13) {
+                   
+                   start("chat");
+                   e.preventDefault();
+                   
+                }
+                
+             });
+          
+             $('#daten input.nachname').on('keydown', function(e) {
+                
+                if (e.which == 9) {
+                   
+                   e.preventDefault();
+                   
+                }
+                
+             });
+             
+          }
           
        }
        
@@ -779,7 +820,7 @@
           
           if ((!auswahl) || (auswahl == "")) {
              
-             auswahl = config["anwendung"]["defaultStil"];
+             auswahl = config["default"]["stil"];
              
           }
        
