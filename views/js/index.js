@@ -48,12 +48,12 @@
     // menu("an");
        
     // Menü auswählen und anzeigen
-       menue = getParameters("menu");
+       menue = getParameters("m");
        if ((!menue) || (menue == "")) { 
           menue = config["anwendung"]["defaultMenu"];
        }
        $("#menu > div").css("display", "none");
-       $("#menu > #"+menue).css("display", "block");
+       $("#menu > ."+menue).css("display", "block");
        
     // Befehle im Menü
        selektor = "#seite > #menu div > div button";
@@ -94,7 +94,7 @@
        var sagen = "";
           
     // Ansichten anpassen
-    // $("#seite > div").fadeOut();
+       $("#seite > #chat, #seite > #daten").fadeOut();
        
     // Chat starten
        if (methode == "chat") {
@@ -103,9 +103,9 @@
        // console.log('\n\nNeues Gespräch\n');
           
        // Daten aus Formular übernehmen
-          vorname =  $("#vorname").val();
-          nachname = $("#nachname").val();
-          email =    $("#email").val();
+          vorname =  $("#vornameDaten").val();
+          nachname = $("#nachnameDaten").val();
+          email =    $("#emailDaten").val();
           
        // Smooch Js
        // https://github.com/smooch/smooch-js
@@ -176,11 +176,41 @@
        // Konversation rendern
           anpassen();
           
-          $("#seite > #chat").fadeIn();
+       // Inhalt anzeigen
+          $("#seite > #"+methode).fadeIn();
        
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
        // window.setTimeout(function() { blink(); }, 2000);
+          
+       }
+       
+    // Menü anzeigen starten
+       if (methode == "daten") {
+          
+       // Inhalt anzeigen
+          $("#seite > #"+methode).fadeIn();
+       
+          $('#daten input[type=text], #menu input[type=text]').on('keydown', function(e) {
+             
+             if (e.which == 13) {
+                
+                start("chat");
+                e.preventDefault();
+                
+             }
+             
+          });
+       
+          $('#daten input.nachname').on('keydown', function(e) {
+             
+             if (e.which == 9) {
+                
+                e.preventDefault();
+                
+             }
+             
+          });
           
        }
        
@@ -645,20 +675,23 @@
           if ((wert)  && (wert != ""))  { wert = wert; } 
           else { wert = daten["label"][name]; } 
           
-          $("#"+name).val(wert).trigger("change");
+          $("#"+name+"Daten, #"+name+"Menu").val(wert);
+          $("#"+name+"Daten").trigger("change");
           
-          $("#"+name).change(function(){  
+          $("#"+name+"Daten, #"+name+"Menu").change(function(){  
              
              var wert_neu = $(this).val();
              
              if ((wert_neu) && (wert_neu != "") && (wert_neu != daten["label"][name]) && (wert_neu != daten["default"][name])) {
                 
                 Cookies.set(daten["cookie"][name], wert_neu);
+                $("#"+name+"Daten, #"+name+"Menu").val(wert_neu).trigger("change");
                 
              }
              else {
                 
-                $("#"+name).val(daten["label"][name]).trigger("change");
+                $("#"+name+"Daten, #"+name+"Menu").val(daten["label"][name]);
+                $("#"+name+"Daten").trigger("change");
                 
              }
              
@@ -856,7 +889,8 @@
        window.Smooch.updateUser(update);
     // console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
        
-       $("#menu #formular #"+id).val(wert).trigger("change");
+       $("."+id).val(wert);
+       $("#menu #"+id).trigger("change");
        
     }
     

@@ -9,9 +9,9 @@
           "name": "Chatraum",
           "defaultAnsicht": "chat", // chat, daten
           "defaultStil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
-          "defaultMenu": "chatraum", // chatraum, robogeddon
-          "defaultButton": "an", // an, aus
-          "defaultBefehler": "an", // an, aus
+          "defaultMenu": "chatraum", // chatraum, robogeddon, cqt
+          "defaultButton": "aus", // an, aus
+          "defaultBefehler": "aus", // an, aus
           "cdn" : "http://sefzig.net/text/seiten/ChatraumCdn/dateien/"
           
        },
@@ -256,9 +256,9 @@
           [
              "<center>",
                 "<img class='%klasse%' ",
-                   "src='http://chart.apis.google.com/chart?chs=225x225&cht=qr&chld=L&chf=bg,s,65432100&chl=%inhalt%' />",
+                   "src='http://chart.apis.google.com/chart?chs=225x225&cht=qr&chld=L&chf=s,65432100&chl=%inhalt%' />", // &chf=bg,s,65432100
              "</center> ",
-             "%inhalt%"
+             "<a href=%inhalt% target=_blank>%inhalt%</a>"
           ],
           
        // Iframe

@@ -24,26 +24,32 @@
   </head>
   <body data-menu="an" data-stil="">
     <div id="seite">
-      <div id="intro" style="display:none">
-        <!--
-        <h2>Funktionen</h2>
-        <ul>
-          <li><a href="#daten"    data-start="daten">   Einstellungen</a></li>
-          <li><a href="#chat"     data-start="chat"    >Chatraum Bot</a></li>
-          <li><a href="#facebook" data-start="facebook">Facebook Messenger</a></li>
-          <li><a href="#slack"    data-start="slack"   >Offenes Slack-Team</a></li>
-          <li><a href="#webseite" data-start="webseite">Klassische Webseite</a></li>
-        </ul>
-        -->
-      </div>
       <div id="daten">
-        
+        <div class="robogeddon">
+          <h2>#Chatraum</h2>
+          <div data-start="chat" style="cursor: pointer;">
+            <img src="img/ui/Intro.png" alt="Gespräch beginnen" />
+            <div>
+              <table>
+                <tr><td style="height: 100px;">&nbsp;</td></tr>
+                <tr><td>
+                  <input type="submit" value="Gespräch beginnen" data-start="chat" /><br />
+                </td></tr>
+                <tr><td style="height: 100px;">
+                  <span>Wenn Sie möchten, geben Sie Ihren Namen an:</span><br /><br />
+                  <input type="text" class="vorname"  id="vornameDaten"  value="" onchange="console.log($(this).val()); $('#vornameMenu' ).attr('value', $(this).val());" style="width:  84px;" /><script> wachsen("vornameDaten",   84); $("#vornameDaten" ).trigger("change"); </script><br />
+                  <input type="text" class="nachname" id="nachnameDaten" value="" onchange="console.log($(this).val()); $('#nachnameMenu').attr('value', $(this).val());" style="width:  96px;" /><script> wachsen("nachnameDaten",  96); $("#nachnameDaten").trigger("change"); </script>
+                </td></tr>
+              </table>
+            </div>
+          </div>
+        </div>
       </div>
       <div id="menu">
-        <div id="robogeddon">
+        <div class="robogeddon">
           
         </div>
-        <div id="chatraum">
+        <div class="chatraum">
           <h2>Chatraum</h2>
           <div style="margin-right:0px; overflow:hidden;">
             Dies ist die Vorlage des Chatraums.<br />
@@ -65,10 +71,9 @@
           </div>
           <div id="formular">
             <h3>Ihre Daten</h3>
-            <li><input type="text" id="vorname"  value="" style="width:  84px;" /></li><script>wachsen("vorname",   84);</script>
-            <li><input type="text" id="nachname" value="" style="width:  96px;" /></li><script>wachsen("nachname",  96);</script>
-            <li><input type="text" id="email"    value="" style="width: 100px;" /></li><script>wachsen("email",    100);</script>
-            <input type="submit" value="Gespräch beginnen" data-start="chat" />
+            <li><input type="text" class="vorname"  id="vornameMenu"  value="" style="width:  84px;" /></li><script>wachsen("vornameMenu",   84);</script>
+            <li><input type="text" class="nachname" id="nachnameMenu" value="" style="width:  96px;" /></li><script>wachsen("nachnameMenu",  96);</script>
+            <li><input type="text" class="email"    id="emailMenu"    value="" style="width: 100px;" /></li><script>wachsen("emailMenu",    100);</script>
           </div>
           <div>
             <h3>Tipps</h3>
@@ -83,7 +88,7 @@
           </div>
         </div>
       </div>
-      <div id="chat" style="display:none;">
+      <div id="chat">
         <div id="chatContainer">
           Lade Chat...
         </div>
