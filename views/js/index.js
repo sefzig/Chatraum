@@ -106,7 +106,7 @@
           nachname = $("#nachnameDaten").val(); if ((nachname == daten["label"]["nachname"]) || (!nachname) || (nachname == "")) { bereit = "nein"; }
           
        // Methode zurücksetzen
-          if (bereit != "ja") { methode = "daten"; }
+          if (bereit == "nein") { methode = "daten"; }
           
        }
        
@@ -212,21 +212,16 @@
     // Daten anzeigen starten
        if (methode == "daten") {
           
-          var intro =       config["default"]["intro"];
-          var gesprochen =  Cookies.get(daten["cookie"]["gesprochen"]);
+          var gesprochen = Cookies.get(daten["cookie"]["gesprochen"]);
+          var ansicht =    config["default"]["ansicht"];
           
           if (gesprochen == "ja") {
              
              start("chat");
              
           }
-          else if (intro == "aus") {
+          else if (ansicht == "daten") {
              
-             start("chat");
-             
-          }
-          else {
-	          
           // Inhalt anzeigen
              $("#seite > #"+methode).fadeIn();
           
@@ -250,6 +245,16 @@
                 }
                 
              });
+             
+          }
+          else if (ansicht == "chat") {
+	          
+             start("chat");
+             
+          }
+          else {
+	          
+             alert("komisch...");
              
           }
           

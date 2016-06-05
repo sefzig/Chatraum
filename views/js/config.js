@@ -14,11 +14,11 @@
     // Defaults
        "default": {
           
-          "ansicht": "chat", // chat, daten
+          "ansicht": "daten", // chat, daten
           "stil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
           "menu": "chatraum", // chatraum, robogeddon, cqt
-          "intro": "an", // an, aus
-          "name": "an", // an, aus
+       // "intro": "an", // an, aus
+          "name": "aus", // an, aus
           "button": "aus", // an, aus
           "befehler": "aus" // an, aus
           
