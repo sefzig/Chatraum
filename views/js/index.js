@@ -60,16 +60,23 @@
        $(selektor).click(function() {
           
           datastil = $(this).attr("data-stil");
+          datanav = $(this).attr("data-nav");
           
           if ((datastil) && (datastil != "")) { 
              
              stil(datastil);
              
           }
+          else if ((datanav) && (datanav != "")) { 
+             
+          // alert(window.history.length+", "+window.history.state);
+             window.history.go(datanav);
+             
+          }
           else {
              
              befehl = $(this).text();
-             Smooch.sendMessage("--"+befehl);
+             befehlerKlick(befehl);
              
           }
           
@@ -86,6 +93,22 @@
     // Intro-Texte einsetzen
        $("#namenEingeben").html(texte["intro"]["namenEingeben"]);
        
+    // Hash-Navigation
+       window.onhashchange = function() {
+       
+          befehl_letzter = $("body").attr("data-befehl-letzter");
+          befehl_neuer = window.location.hash;
+          befehl_neuer = befehl_neuer.replace("#","");
+          
+          if ((befehl_neuer != befehl_letzter) && (befehl_neuer) && (befehl_neuer != "")) {
+             
+          // Nachricht senden
+             befehlen(befehl_neuer);
+             
+          }
+          
+       };
+    
     });
     
  // Chat starten
@@ -669,11 +692,8 @@
  // Befehler-Klicks
     function befehlerKlick(inhalt) {
        
-    // Befehlleiste erzeugen
-    // Folgt...
-    // alert("Befehler geklickt: "+inhalt);
-       window.Smooch.sendMessage(inhalt);
-       
+    // console.log("Befehler geklickt: "+inhalt);
+       befehlen(inhalt);
        
     }
     
@@ -703,12 +723,28 @@
  // Klicks auf Befehle
     function befehlen(befehl) {
        
-    // $("#sk-footer form input.message-input").val(befehl);
-    // $("#sk-footer form input.message-input").change();
-    // $("#sk-footer form input.message-input").focus();
-    // $("#sk-footer form .send").trigger("click");
+    // Sperrung?
+       gesperrt = $("body").attr("data-befehl-sperren");
        
-       window.Smooch.sendMessage(befehl);
+       if (gesperrt != "an") {
+          
+       // Nachricht senden
+          window.Smooch.sendMessage(befehl);
+       
+       }
+       
+    // Befehl säubern
+       befehl = befehl.replace("--","");
+       
+    // Hash-Navigation aktualisieren
+       window.location.hash = "#"+befehl;
+       
+    // Zurück-Tmp aktualisieren
+       $("body").attr("data-befehl-letzter", befehl);
+       
+    // "Doppelklicks" verhindern
+       $("body").attr("data-befehl-sperren", "an");
+       window.setTimeout(function() { $("body").attr("data-befehl-sperren", "aus"); }, 1000);
        
     }
     
@@ -722,7 +758,7 @@
           else { wert = daten["label"][name]; } 
           
           $("#"+name+"Daten, #"+name+"Menu").val(wert);
-          $("#"+name+"Daten").trigger("change");
+          $("#"+name+"Daten").trigger("keydown");
           
           $("#"+name+"Daten, #"+name+"Menu").change(function(){  
              
@@ -731,13 +767,13 @@
              if ((wert_neu) && (wert_neu != "") && (wert_neu != daten["label"][name]) && (wert_neu != daten["default"][name])) {
                 
                 Cookies.set(daten["cookie"][name], wert_neu);
-                $("#"+name+"Daten, #"+name+"Menu").val(wert_neu).trigger("change");
+                $("#"+name+"Daten, #"+name+"Menu").val(wert_neu).trigger("keydown");
                 
              }
              else {
                 
                 $("#"+name+"Daten, #"+name+"Menu").val(daten["label"][name]);
-                $("#"+name+"Daten").trigger("change");
+                $("#"+name+"Daten").trigger("keydown");
                 
              }
              
@@ -936,7 +972,7 @@
     // console.log("Cookies: Smooch-User '"+id+"' Info: "+wert);
        
        $("."+id).val(wert);
-       $("#menu #"+id).trigger("change");
+       $("#menu #"+id).trigger("keydown");
        
     }
     
