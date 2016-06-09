@@ -3,7 +3,7 @@
  // Initialisierung
  // ------------------------
     
- // Jquery Ready
+ // Jquery ready
     $(document).ready(function() {
        
     // Titel aus Config einsetzen
