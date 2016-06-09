@@ -18,6 +18,7 @@
        z-index: 2;
        overflow-x: hidden;
        overflow-y: hidden;
+       background-color: white !important;
     }
     h1, h2, h3, h4, h5, h6 {
        margin: 10px;
@@ -155,8 +156,22 @@
     }
     #seite > #daten > div div img {
        max-width: 100%;
-       max-height: 400px;
     }
+    @media (min-height:    1px) { #seite > #daten > div div img { max-height:  100px; animation-name: hohe1;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe1  { to { max-height: 200px; } }
+    @media (min-height:  200px) { #seite > #daten > div div img { max-height:  100px; animation-name: hohe2;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe2  { to { max-height: 250px; } }
+    @media (min-height:  250px) { #seite > #daten > div div img { max-height:  150px; animation-name: hohe2;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe2  { to { max-height: 250px; } }
+    @media (min-height:  300px) { #seite > #daten > div div img { max-height:  200px; animation-name: hohe2;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe2  { to { max-height: 250px; } }
+    @media (min-height:  350px) { #seite > #daten > div div img { max-height:  250px; animation-name: hohe2;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe2  { to { max-height: 250px; } }
+    @media (min-height:  400px) { #seite > #daten > div div img { max-height:  300px; animation-name: hohe3;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe3  { to { max-height: 300px; } }
+    @media (min-height:  450px) { #seite > #daten > div div img { max-height:  350px; animation-name: hohe4;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe4  { to { max-height: 350px; } }
+    @media (min-height:  500px) { #seite > #daten > div div img { max-height:  400px; animation-name: hohe5;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe5  { to { max-height: 400px; } }
+    @media (min-height:  550px) { #seite > #daten > div div img { max-height:  460px; animation-name: hohe6;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe6  { to { max-height: 460px; } }
+    @media (min-height:  600px) { #seite > #daten > div div img { max-height:  410px; animation-name: hohe7;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe7  { to { max-height: 410px; } }
+    @media (min-height:  650px) { #seite > #daten > div div img { max-height:  470px; animation-name: hohe8;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe8  { to { max-height: 470px; } }
+    @media (min-height:  700px) { #seite > #daten > div div img { max-height:  510px; animation-name: hohe9;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe9  { to { max-height: 510px; } }
+    @media (min-height:  725px) { #seite > #daten > div div img { max-height:  540px; animation-name: hohe10; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe10 { to { max-height: 540px; } }
+    @media (min-height:  750px) { #seite > #daten > div div img { max-height:  570px; animation-name: hohe11; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe11 { to { max-height: 570px; } }
+    
     #seite > #daten > div div div {
        position: absolute;
        top: 0px;

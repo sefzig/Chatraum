@@ -16,7 +16,8 @@
           
           "ansicht": "daten", // chat, daten
           "stil": "robogeddon", // tag, robogeddon, nacht, hx
-          "menu": "chatraum", // chatraum, robogeddon (eigentlich "client")
+          "menu": "chatraum", // chatraum, robogeddon
+          "client": "chatraum", // chatraum, robogeddon (eigentlich "client")
        // "intro": "an", // an, aus
           "name": "aus", // an, aus
           "button": "aus", // an, aus

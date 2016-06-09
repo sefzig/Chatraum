@@ -4,19 +4,37 @@
  // ------------------------
     
  // Jquery ready
-    $(document).ready(function() {
+    $(document).ready(function() { 
+       
+    // Mobile Weiche
+       var istMobil = {
+       android:    function() { return navigator.userAgent.match(/Android/i); },
+       blackberry: function() { return navigator.userAgent.match(/BlackBerry/i); },
+       ios:        function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+       opera:      function() { return navigator.userAgent.match(/Opera Mini/i); },
+       windows:    function() { return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i); },
+       any:        function() { return (istMobil.android() || istMobil.blackberry() || istMobil.ios() || istMobil.opera() || istMobil.windows()); }
+       };
+   
+    // Mobile Anpassungen
+       if (istMobil.android())    { $("body").attr("data-mobil", "android"); }
+       if (istMobil.blackberry()) { $("body").attr("data-mobil", "blackberry"); }
+       if (istMobil.ios())        { $("body").attr("data-mobil", "ios"); }
+       if (istMobil.opera())      { $("body").attr("data-mobil", "opera"); }
+       if (istMobil.windows())    { $("body").attr("data-mobil", "windows"); }
        
     // Titel aus Config einsetzen
        document.title = config["anwendung"]["name"];
        
     // Client aus Config
-       var client = config["default"]["menu"];
+       var client = config["default"]["client"];
        
     // Client-Templates einsetzen
-       $("#daten").load("client/"+client+"/daten.html", function() {
+       $("#daten").load("client/daten.html", function() {
           
-          $("#menu").load("client/"+client+"/menu.html", function() {
+          $("#menu").load("client/menu.html", function() {
              
+          // Anwendung laden
              bereit();
              
           });
