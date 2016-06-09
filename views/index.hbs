@@ -23,70 +23,15 @@
     <script type="text/javascript" src="js/funktionen.js"></script>
   </head>
   <body data-menu="an" data-stil="">
+    <div id="hintergrund">
+      <img src="" alt="">
+    </div>
     <div id="seite">
       <div id="daten">
-        <div class="robogeddon">
-          <h2>#Chatraum</h2>
-          <div data-start="chat">
-            <img src="img/ui/Intro.png" alt="Gespräch beginnen" />
-            <div>
-              <table data-start="chat">
-                <tr><td data-start="chat" style="cursor: pointer; height: 100px;">&nbsp;</td></tr>
-                <tr><td data-start="chat" style="cursor: pointer;">
-                  <input type="submit" value="Gespräch beginnen" /><br />
-                </td></tr>
-                <tr><td style="height: 100px;">
-                  <span id="namenEingeben"></span><br /><br />
-                  <input type="text" class="vorname"  id="vornameDaten"  value="" onchange="console.log($(this).val()); $('#vornameMenu' ).attr('value', $(this).val());" style="width:  84px; margin-bottom: 5px;" /><script> wachsen("vornameDaten",   84); $("#vornameDaten" ).trigger("change"); </script><br />
-                  <input type="text" class="nachname" id="nachnameDaten" value="" onchange="console.log($(this).val()); $('#nachnameMenu').attr('value', $(this).val());" style="width:  96px; margin-bottom: 5px;" /><script> wachsen("nachnameDaten",  96); $("#nachnameDaten").trigger("change"); </script>
-                </td></tr>
-              </table>
-            </div>
-          </div>
-        </div>
+        Lade Daten...
       </div>
       <div id="menu">
-        <div class="robogeddon">
-          
-        </div>
-        <div class="chatraum">
-          <h2>Chatraum</h2>
-          <div style="margin-right:0px; overflow:hidden;">
-            Dies ist die Vorlage des Chatraums.<br />
-            Sprechen Sie mit uns und den Bots.<br />
-            Verwenden Sie die Excel-Vorlage!
-          </div>
-          <div>
-            <h3>Über uns</h3>
-            <li># <button tabindex="2" style="margin-left:-2px;">Chatraum</button></li>
-            <li>Unsere <button tabindex="3">Produkte</button></li>
-            <li><button tabindex="4">Kontakt</button> aufnehmen</li>
-            <!-- Folgt: Tabindex fortführen... -->
-          </div>
-          <div>
-            <h3>Unsere Bots</h3>
-            <li>Alice: <button>Empfang</button></li>
-            <li>Barbara: <button>Verkauf</button></li>
-            <li>Cynthia: <button>Marketing</button></li>
-          </div>
-          <div id="formular">
-            <h3>Ihre Daten</h3>
-            <li><input type="text" class="vorname"  id="vornameMenu"  value="" style="width:  84px;" /></li><script>wachsen("vornameMenu",   84);</script>
-            <li><input type="text" class="nachname" id="nachnameMenu" value="" style="width:  96px;" /></li><script>wachsen("nachnameMenu",  96);</script>
-            <li><input type="text" class="email"    id="emailMenu"    value="" style="width: 100px;" /></li><script>wachsen("emailMenu",    100);</script>
-          </div>
-          <div>
-            <h3>Tipps</h3>
-            <li>Alle <button>Befehle</button> eines Bots</li>
-            <li><button>Über</button> den gerade aktiven Bot</li>
-            <li>Einfach <button>abbrechen</button> wenn lost</li>
-            <li><button>Zurück</button> zum letzten Bot</li>
-            <li>Browser: <button data-nav=1>Vor</button> und <button data-nav=-1>Zurück</button></li>
-            <li><button>Menü</button> an- oder ausschalten</li>
-            <li>Den Chat <button>mobil</button> öffnen</li>
-            <li>Stil: <button data-stil=tag>Tag</button>, <button data-stil=robogeddon>Robos</button>, <button data-stil=hacks>Hx</button>, <button data-stil=nacht>Nacht</button></li>
-          </div>
-        </div>
+        Lade Menü...
       </div>
       <div id="chat">
         <div id="chatContainer">
@@ -94,18 +39,17 @@
         </div>
       </div>
       <div id="fenster" onclick="fensterSchliessen();">
-        <table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"><tr width="100%"><td height="40"></tr><tr><td align="center" valign="center">
+        <table cellspacing="0" cellpadding="0" border="0" width="100%" height="100%"><tr width="100%"><td height="18"></tr><tr><td align="right" valign="center">
+        <div>
+          <img src="clientimg/Menu_Schliessen_125x125.png" alt="Schliessen" onclick="fensterSchliessen();" />
+        </div>
           <iframe src="" style="margin-top:10px;"></iframe>
           <img src="" />
-        </td></tr><!--<tr><td height="55">Fusszeile</td></tr>--></table>
-        <div>
-          <img src="img/ui/Schliessen.png" onclick="fensterSchliessen();" />
-        </div>
+        </td></tr></table>
       </div>
       <div id="start" style="">
-        <input tabindex="0" type="image" src="img/ui/Menu.png" data-start="menu" style="" />
+        <input tabindex="0" type="image" src="clientimg/Menu_Button_125x125.png" data-start="menu" style="" />
       </div>
-      
     </div>
     <script src="https://cdn.smooch.io/smooch.min.js"></script>
     <script src="js/index.js"></script>

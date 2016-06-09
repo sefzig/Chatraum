@@ -2,9 +2,31 @@
  // ------------------------
  // Initialisierung
  // ------------------------
-
+    
+ // Jquery Ready
+    $(document).ready(function() {
+       
+    // Titel aus Config einsetzen
+       document.title = config["anwendung"]["name"];
+       
+    // Client aus Config
+       var client = config["default"]["menu"];
+       
+    // Client-Templates einsetzen
+       $("#daten").load("client/"+client+"/daten.html", function() {
+          
+          $("#menu").load("client/"+client+"/menu.html", function() {
+             
+             bereit();
+             
+          });
+          
+       });
+       
+    });
+    
  // Anwendung starten
-    $(document).ready(function(){
+    function bereit() {
        
     // Variablen
        var selektor = "";
@@ -108,8 +130,8 @@
           }
           
        };
-    
-    });
+       
+    }
     
  // Chat starten
     function start(methode) {
@@ -850,26 +872,31 @@
        zufall = 4;
        dir = "stil";
        
+       if ((!auswahl) || (auswahl == "")) { auswahl = Cookies.get(daten["cookie"]["stil"]); }
+       if ((!auswahl) || (auswahl == "")) { auswahl = getParameters("stil"); }
+       if ((!auswahl) || (auswahl == "")) { auswahl = config["default"]["stil"]; }
+       
        if ((auswahl) && (auswahl != "")) {
           
           auswahl = auswahl.replace("--", "");
+          auswahl = auswahl.toLowerCase();
           
        }
-       else {
-          
-          auswahl = getParameters("stil");
-          
-          if ((!auswahl) || (auswahl == "")) {
-             
-             auswahl = config["default"]["stil"];
-             
-          }
        
-       }
-       
-       auswahl = auswahl.toLowerCase();
        ladenCss(auswahl, zufall, dir);
        $("body").attr("data-stil", auswahl);
+       
+       auswahl = auswahl.charAt(0).toUpperCase() + auswahl.slice(1);
+       dateiendung = "jpg";
+       if (auswahl == "Hacks") { dateiendung = "gif"; }
+       
+       $("body > #hintergrund img")
+       .attr("src", "")
+       .attr("src", config["anwendung"]["cdn"]+"Stil_"+auswahl+"_1200x1200."+dateiendung)
+       .attr("alt", "Hintergrundbild des Stils '"+auswahl+"'");
+    // $("#chat").css("outline", "black 3px solid");
+       
+       Cookies.set(daten["cookie"]["stil"], auswahl, { expires: 365 });
        
     }
     

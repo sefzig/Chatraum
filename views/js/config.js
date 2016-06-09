@@ -15,8 +15,8 @@
        "default": {
           
           "ansicht": "daten", // chat, daten
-          "stil": "robogeddon", // tag, robogeddon, nacht, hx, cqt
-          "menu": "chatraum", // chatraum, robogeddon, cqt
+          "stil": "robogeddon", // tag, robogeddon, nacht, hx
+          "menu": "chatraum", // chatraum, robogeddon (eigentlich "client")
        // "intro": "an", // an, aus
           "name": "aus", // an, aus
           "button": "aus", // an, aus
@@ -72,7 +72,8 @@
           "vorname":    ""+config["anwendung"]["id"]+"Vorname",
           "nachname":   ""+config["anwendung"]["id"]+"Nachname",
           "email":      ""+config["anwendung"]["id"]+"Email",
-          "gesprochen": ""+config["anwendung"]["id"]+"Gesprochen"
+          "gesprochen": ""+config["anwendung"]["id"]+"Gesprochen",
+          "stil":       ""+config["anwendung"]["id"]+"Stil"
           
        }
        
