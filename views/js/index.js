@@ -668,7 +668,7 @@
                    $(this).parent().parent().css("padding-top","10px");
                    
                 // Avatar davor verbergen
-                   $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", "img/bots/Displaybild_LeerBot.png");
+                   $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", config["anwendung"]["cdn"]+"Displaybild_LeerBot.png");
                    
                 // Pfeilchen davor verbergen
                    $(this).parent().parent().prev().find(".sk-msg").addClass("frei");
