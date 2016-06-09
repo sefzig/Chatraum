@@ -330,6 +330,15 @@
           
        }
        
+    // CDN-Bilder Pfad ergänzen
+       $("[rel='cdn']").each(function() {
+          
+          src = $(this).attr("src");
+          cdn = config["anwendung"]["cdn"];
+          $(this).attr("src", cdn+""+src).attr("rel", "");
+          
+       });
+       
     }
     
  // Befehler-Leiste laden
