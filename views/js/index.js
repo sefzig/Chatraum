@@ -30,9 +30,9 @@
        var client = config["default"]["client"];
        
     // Client-Templates einsetzen
-       $("#daten").load("client/daten.html", function() {
+       $("#daten").load("client/_"+client+"/daten.html", function() {
           
-          $("#menu").load("client/menu.html", function() {
+          $("#menu").load("client/_"+client+"/menu.html", function() {
              
           // Anwendung laden
              bereit();
