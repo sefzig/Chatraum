@@ -12,7 +12,7 @@ app.use(bodyParser.json());
 app.use("/img", express.static(__dirname + '/views/img'));
 app.use("/css", express.static(__dirname + '/views/css'));
 app.use("/js", express.static(__dirname + '/views/js'));
-app.use("/client", express.static(__dirname + '/views/client'));
+app.use("/client", express.static(__dirname + '/views/client/chatraum'));
 
 app.get('/', function(req, res) {
     res.render('index', {
