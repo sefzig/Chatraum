@@ -246,16 +246,17 @@
           "Textzeit":
           [
              "<span class='textZeit'>",
-                "%var2%",
+                "",
              "</span>",
              "<script>",
              "   var zeittext = \"\"; ",
-             "   var zeit = new Date(); ",
-             "   zeit = zeit.getHours(); ",
-             "   if (zeit < 15) { zeittext = \"%var1%\"; } ",
+             "   var zeiten = new Date(); ",
+             "   zeit = zeiten.getHours(); ",
+             "   if (zeit < 12) { zeittext = \"%var1%\"; } ",
              "   else if (zeit < 18) { zeittext = \"%var2%\"; } ",
              "   else { zeittext = \"%var3%\"; } ",
-             "   $(\".textZeit\").html(zeittext)",
+             "   console.log(zeittext); ",
+             "   $(\".textZeit\").html(zeittext);",
              "</script>",
           ],
           
