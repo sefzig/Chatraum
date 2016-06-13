@@ -230,6 +230,13 @@
     @media (min-width: 500px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 12px !important; } #menu h2, #daten h2 { font-size: 16px; } #menu h3, #daten h3 { font-size: 14px !important; } }
     @media (min-width: 550px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 13px !important; } #menu h2, #daten h2 { font-size: 17px; } #menu h3, #daten h3 { font-size: 15px !important; } }
     
+    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  *  { font-size: 14px !important; }
+    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten *  { font-size: 14px !important; }
+    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  h2 { font-size: 18px !important; }
+    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten h2 { font-size: 18px !important; }
+    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  h3 { font-size: 16px !important; }
+    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten h3 { font-size: 16px !important; }
+    
     #menu div > div button,
     #menu div > div a { 
        margin-top: 1px;

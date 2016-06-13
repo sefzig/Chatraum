@@ -246,7 +246,7 @@
           "Textzeit":
           [
              "<span class='textZeit'>",
-                "",
+                "%var2%",
              "</span>",
              "<script>",
              "   var zeittext = \"\"; ",
@@ -255,7 +255,6 @@
              "   if (zeit < 12) { zeittext = \"%var1%\"; } ",
              "   else if (zeit < 18) { zeittext = \"%var2%\"; } ",
              "   else { zeittext = \"%var3%\"; } ",
-             "   console.log(zeittext); ",
              "   $(\".textZeit\").html(zeittext);",
              "</script>",
           ],

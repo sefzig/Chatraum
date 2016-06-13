@@ -11,15 +11,21 @@
        android:    function() { return navigator.userAgent.match(/Android/i); },
        blackberry: function() { return navigator.userAgent.match(/BlackBerry/i); },
        ios:        function() { return navigator.userAgent.match(/iPhone|iPad|iPod/i); },
+       ipad:       function() { return navigator.userAgent.match(/iPad/i); },
+       iphone:     function() { return navigator.userAgent.match(/iPhone/i); },
+       ipod:       function() { return navigator.userAgent.match(/iPod/i); },
        opera:      function() { return navigator.userAgent.match(/Opera Mini/i); },
        windows:    function() { return navigator.userAgent.match(/IEMobile/i) || navigator.userAgent.match(/WPDesktop/i); },
-       any:        function() { return (istMobil.android() || istMobil.blackberry() || istMobil.ios() || istMobil.opera() || istMobil.windows()); }
+       any:        function() { return (istMobil.android() || istMobil.blackberry() || istMobil.iphone() || istMobil.ipod() || istMobil.opera() || istMobil.windows()); }
        };
    
     // Mobile Anpassungen
        if (istMobil.android())    { $("body").attr("data-mobil", "android"); }
        if (istMobil.blackberry()) { $("body").attr("data-mobil", "blackberry"); }
        if (istMobil.ios())        { $("body").attr("data-mobil", "ios"); }
+       if (istMobil.ipad())       { $("body").attr("data-mobil", "ipad"); }
+       if (istMobil.ipod())       { $("body").attr("data-mobil", "ipod"); }
+       if (istMobil.iphone())     { $("body").attr("data-mobil", "iphone"); }
        if (istMobil.opera())      { $("body").attr("data-mobil", "opera"); }
        if (istMobil.windows())    { $("body").attr("data-mobil", "windows"); }
        
@@ -260,11 +266,13 @@
        // Konversation rendern
           anpassen();
           
-       // Ansichten anpassen
-          $("#seite > #chat, #seite > #daten").fadeOut();
-       
        // Inhalt anzeigen
-          $("#seite > #"+methode).fadeIn();
+          $("#seite > #"+methode).fadeIn(300, function() {
+          
+          // Daten ausblenden
+             $("#seite > #daten").fadeOut();
+       
+          });
        
        // Fokus auf Eingabe
           $("#sk-footer .message-input").focus();
@@ -286,7 +294,7 @@
           else if (ansicht == "daten") {
              
           // Inhalt anzeigen
-             $("#seite > #"+methode).fadeIn();
+             $("#seite > #"+methode).css("display","block");
           
              $('#daten input[type=text], #menu input[type=text]').on('keydown', function(e) {
                 
@@ -927,13 +935,17 @@
        dateiendung = "jpg";
        if (auswahl == "Hacks") { dateiendung = "gif"; }
        
-       $("body > #hintergrund img")
-       .attr("src", "")
-       .attr("src", config["anwendung"]["cdn"]+"Stil_"+auswahl+"_1200x1200."+dateiendung)
-       .attr("alt", "Hintergrundbild des Stils '"+auswahl+"'");
-    // $("#chat").css("outline", "black 3px solid");
-       
        Cookies.set(daten["cookie"]["stil"], auswahl, { expires: 365 });
+       
+       window.setTimeout(function() {
+       
+          $("body > #hintergrund img")
+          .attr("src", "")
+          .attr("src", config["anwendung"]["cdn"]+"Stil_"+auswahl+"_1200x1200."+dateiendung)
+          .attr("alt", "Hintergrundbild des Stils '"+auswahl+"'");
+       // $("#chat").css("outline", "black 3px solid");
+          
+       }, 1000);
        
     }
     
@@ -981,7 +993,7 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             breite_neu = "60%";
+             if ($("body[data-mobil]") != "iphone") { breite_neu = "60%"; }
           // console.log("neue methode (an): '"+methode+"'");
                 
           }
