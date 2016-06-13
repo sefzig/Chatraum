@@ -7,8 +7,13 @@
        background: green; 
     }
     
+ /* Nur/Nicht Mobil */
+    .nur_iphone,
     body[data-mobil="iphone"] .nicht_iphone {
        display: none;
+    }
+    body[data-mobil="iphone"] .nur_iphone {
+       display: inline;
     }
     
  /* Anpassungen Absender */

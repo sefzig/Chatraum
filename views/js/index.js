@@ -629,13 +629,15 @@
        // 1 Zufallszahl für jede Nachricht
           var zufall = Math.floor(Math.random()*999999);
           
+          var mobil = $("body").attr("data-mobil");
+          
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              alert:        function (b) { alert(b); },
              konsole:      function (b) { konsolen(b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
-             menu:         function (b) { menu(b); },
+             menu:         function (b) { if (mobil != "iphone") { menu(b); } },
              stil:         function (b) { stil(b); }
           };
           
@@ -988,20 +990,22 @@
        
        if (zeit > zeitClient) {
           
+          var mobil = $("body").attr("data-mobil");
+          
        // Animation vorbreiten
           if (methode == "an") {
                 
              methode_neu = "aus";
              left_neu = "0%";
-          // if ($("body").attr("data-mobil") == "iphone") { breite_neu = "100%"; } else { breite_neu = "60%"; }
-             breite_neu = "60%";
+             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "60%"; }
+          // breite_neu = "60%";
           // console.log("neue methode (an): '"+methode+"'");
                 
           }
           else {
              
              methode_neu = "an";
-             left_neu = "-40%";
+             if (mobil == "iphone") { left_neu = "-60%"; } else { left_neu = "-40%"; }
              breite_neu = "100%";
           // console.log("neue methode (aus): '"+methode+"'");
              
