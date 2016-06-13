@@ -380,6 +380,9 @@
  /* ----------------- */
     
  /* Dimensionen */
+    body[data-mobil="iphone"] .sk-msg { 
+       max-width: 220px !important;
+    }
     .sk-msg { 
        max-width: 250px !important;
     }
