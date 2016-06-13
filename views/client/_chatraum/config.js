@@ -242,6 +242,22 @@
              "</a>",
           ],
           
+       // Nach Tageszeit angepasster Text
+          "Textzeit":
+          [
+             "<span class='textZeit' ",
+                "onload='",
+                   "var zeittext = ''; ",
+                   "var zeit = new Date(); ",
+                   "zeit = zeit.getHours(); ",
+                   "if (zeit < 12) { zeittext = '%var1%'; } ",
+                   "else if (zeit < 18) { zeittext = '%var2%'; } ",
+                   "else { zeittext = '%var3%'; } ",
+                   "this.innerHTML = zeittext;'>",
+                "%var2%",
+             "</span>",
+          ],
+          
        // Button mit Link
           "Button":
           [

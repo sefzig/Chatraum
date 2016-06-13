@@ -18,7 +18,6 @@
           "stil": "robogeddon", // tag, robogeddon, nacht, hx
           "menu": "robogeddon", // chatraum, robogeddon
           "client": "robogeddon", // chatraum, robogeddon (eigentlich "client")
-       // "intro": "an", // an, aus
           "name": "aus", // an, aus
           "button": "aus", // an, aus
           "befehler": "aus" // an, aus
