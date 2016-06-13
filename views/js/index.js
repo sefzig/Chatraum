@@ -993,7 +993,8 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             if ($("body[data-mobil]") != "iphone") { breite_neu = "60%"; }
+          // if ($("body").attr("data-mobil") == "iphone") { breite_neu = "100%"; } else { breite_neu = "60%"; }
+             breite_neu = "60%";
           // console.log("neue methode (an): '"+methode+"'");
                 
           }

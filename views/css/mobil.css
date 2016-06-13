@@ -7,6 +7,10 @@
        background: green; 
     }
     
+    body[data-mobil="iphone"] .nicht_iphone {
+       display: none;
+    }
+    
  /* Anpassungen Absender */
     body[data-mobil="iphone"] .sk-left-row {
        position: relative;
@@ -27,6 +31,7 @@
     }
     
     body[data-mobil="iphone"] .sk-logo {
-       margin-left: none;
+       margin-left: auto !important;
+       margin-right: auto !important;
     }
     

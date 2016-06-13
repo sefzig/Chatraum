@@ -96,7 +96,7 @@
        	 
        // Benutzeroberfläche
           "headerText": "Chatraum #Robogeddon",
-          "startText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen - z.B. Hallo!</span>",
+          "startText": "Dies ist der Anfang unseres Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen<span class=nicht_iphone> - z.B. Hallo</span>!</span>",
           "inputPlaceholder": "Schreiben Sie eine Nachricht...",
           "sendButtonText": "Absenden",
           
