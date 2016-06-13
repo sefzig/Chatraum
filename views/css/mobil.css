@@ -10,6 +10,7 @@
  /* Anpassungen Absender */
     body[data-mobil="iphone"] .sk-left-row {
        position: relative;
+       margin-top: 5px;
        margin-left: 40px;
     }
     body[data-mobil="iphone"] .sk-left-row .roboter {
@@ -22,6 +23,10 @@
     }
     body[data-mobil="iphone"] .sk-left-row .sk-from {
        top: -10px;
-       left: -45px;
+       left: 0px;
+    }
+    
+    body[data-mobil="iphone"] .sk-logo {
+       margin-left: none;
     }
     

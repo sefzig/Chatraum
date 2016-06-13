@@ -275,7 +275,7 @@
           });
        
        // Fokus auf Eingabe
-          $("#sk-footer .message-input").focus();
+          if ($("body[data-mobil]") != "iphone") { $("#sk-footer .message-input").focus(); }
        // window.setTimeout(function() { blink(); }, 2000);
           
        }
@@ -1007,7 +1007,7 @@
           }
           
        // Animieren
-          $("#seite > #menu").animate({ right: left_neu }, 300);
+          $("#seite > #menu, #sk-footer").animate({ right: left_neu }, 300);
           $("#seite .sk-logo").animate({ width: breite_neu }, 300);
           $("body").attr("data-menu", methode_neu);
           

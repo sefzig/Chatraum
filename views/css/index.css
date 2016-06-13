@@ -319,6 +319,7 @@
        bottom: 0px;
        padding-top: 3px !important;
        padding-bottom: 7px !important;
+       width: 100%;
        height: 55px !important;
        right: -1px;
     }
