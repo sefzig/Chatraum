@@ -65,7 +65,7 @@
     #seite > #fenster {
        position: absolute;
        top: 0px;
-       bottom: -20px;
+       bottom: 0px;
     }
     #seite > #daten,
     #seite > #chat,

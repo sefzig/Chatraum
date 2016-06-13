@@ -1007,6 +1007,7 @@
              methode_neu = "aus";
              left_neu = "0%";
              if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "80%"; }
+             zeigen = "block";
           // console.log("neue methode (an): '"+methode+"'");
                 
           }
@@ -1015,6 +1016,7 @@
              methode_neu = "an";
              if (mobil == "iphone") { left_neu = "-80%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
+             zeigen = "none";
           // console.log("neue methode (aus): '"+methode+"'");
              
           }
@@ -1025,7 +1027,10 @@
           $("body").attr("data-menu", methode_neu);
           
        // Button einblenden
-          window.setTimeout(function() { $("#start").fadeIn(300); }, 300);
+          window.setTimeout(function() { 
+             $("#menu").css("display", zeigen);
+             $("#start").fadeIn(300); 
+          }, 300);
           
        // Zeit speichern
           $("body").attr("data-menu-zeit", zeit);

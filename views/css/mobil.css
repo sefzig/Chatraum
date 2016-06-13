@@ -14,6 +14,9 @@
     body[data-mobil="iphone"] #menu { 
        bottom: 0px;
     }
+    body[data-mobil="iphone"] #seite > #chat {
+       bottom: -20px !important;
+    }
     
  /* Nur/Nicht Mobil */
     .nur_iphone,
