@@ -275,7 +275,8 @@
           });
        
        // Fokus auf Eingabe
-          if ($("body[data-mobil]") != "iphone") { $("#sk-footer .message-input").focus(); }
+          var mobil = $("body[data-mobil]");
+          if (mobil != "iphone") { $("#sk-footer .message-input").focus(); }
        // window.setTimeout(function() { blink(); }, 2000);
           
        }
@@ -1005,14 +1006,14 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "90%"; }
+             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "80%"; }
           // console.log("neue methode (an): '"+methode+"'");
                 
           }
           else {
              
              methode_neu = "an";
-             if (mobil == "iphone") { left_neu = "-90%"; } else { left_neu = "-42%"; }
+             if (mobil == "iphone") { left_neu = "-80%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
           // console.log("neue methode (aus): '"+methode+"'");
              
