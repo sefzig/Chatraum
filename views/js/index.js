@@ -1005,14 +1005,14 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "70%"; }
+             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "90%"; }
           // console.log("neue methode (an): '"+methode+"'");
                 
           }
           else {
              
              methode_neu = "an";
-             if (mobil == "iphone") { left_neu = "-70%"; } else { left_neu = "-42%"; }
+             if (mobil == "iphone") { left_neu = "-90%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
           // console.log("neue methode (aus): '"+methode+"'");
              

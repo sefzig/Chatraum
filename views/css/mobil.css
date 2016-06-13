@@ -11,6 +11,9 @@
     body[data-mobil="iphone"] #hintergrund { 
        display: none;
     }
+    body[data-mobil="iphone"] #menu { 
+       bottom: 0px;
+    }
     
  /* Nur/Nicht Mobil */
     .nur_iphone,
