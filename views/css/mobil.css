@@ -33,12 +33,15 @@
        margin-top: 5px;
        margin-left: 37px;
     }
+    body[data-mobil="iphone"] .sk-right-row {
+       margin-top: 5px;
+    }
     body[data-mobil="iphone"] .sk-left-row .roboter {
        position: relative;
     }
     body[data-mobil="iphone"] .sk-left-row .sk-msg-avatar {
        position: absolute;
-       top: -10px;
+       top: -9px;
        left: -45px;
     }
     body[data-mobil="iphone"] .sk-left-row .sk-from {

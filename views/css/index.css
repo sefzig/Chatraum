@@ -105,8 +105,8 @@
        width: 42%;
     }
     body[data-mobil="iphone"] #seite > #menu {
-       right: -80%;
-       width: 80%;
+       right: -83%;
+       width: 83%;
     }
     
  /* Burger-Menü */
@@ -344,7 +344,7 @@
     .sk-messages-container .sk-logo {
        text-align: center;
        margin-left: 0px !important;
-       width: 80%;
+       width: 83%;
     }
     
  /* Farben */
@@ -535,7 +535,7 @@
     @media (min-width: 610px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
     
     body[data-menu="an"]                             .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
- /* body[data-mobil="iphone"][data-menu="aus"]       .sk-right-row .sk-msg { margin-right: 80%; transition: all 0.3s linear; } */
+ /* body[data-mobil="iphone"][data-menu="aus"]       .sk-right-row .sk-msg { margin-right: 83%; transition: all 0.3s linear; } */
     body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-right-row .sk-msg { margin-right: 42%; transition: all 0.3s linear; }
     
  /* ----------------- */

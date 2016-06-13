@@ -1006,7 +1006,7 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "80%"; }
+             if (mobil == "iphone") { breite_neu = "100%"; } else { breite_neu = "83%"; }
              zeigen = "block";
           // console.log("neue methode (an): '"+methode+"'");
                 
@@ -1014,7 +1014,7 @@
           else {
              
              methode_neu = "an";
-             if (mobil == "iphone") { left_neu = "-80%"; } else { left_neu = "-42%"; }
+             if (mobil == "iphone") { left_neu = "-83%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
              zeigen = "none";
           // console.log("neue methode (aus): '"+methode+"'");
