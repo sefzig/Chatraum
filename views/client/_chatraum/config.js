@@ -245,17 +245,18 @@
        // Nach Tageszeit angepasster Text
           "Textzeit":
           [
-             "<span class='textZeit' ",
-                "onclick='",
-                   "var zeittext = \"\"; ",
-                   "var zeit = new Date(); ",
-                   "zeit = zeit.getHours(); ",
-                   "if (zeit < 15) { zeittext = \"%var1%\"; } ",
-                   "else if (zeit < 18) { zeittext = \"%var2%\"; } ",
-                   "else { zeittext = \"%var3%\"; } ",
-                   "this.innerHTML = zeittext;'>",
+             "<span class='textZeit'>",
                 "%var2%",
              "</span>",
+             "<script>",
+             "   var zeittext = \"\"; ",
+             "   var zeit = new Date(); ",
+             "   zeit = zeit.getHours(); ",
+             "   if (zeit < 15) { zeittext = \"%var1%\"; } ",
+             "   else if (zeit < 18) { zeittext = \"%var2%\"; } ",
+             "   else { zeittext = \"%var3%\"; } ",
+             "   $(\".textZeit\").html(zeittext)",
+             "</script>",
           ],
           
        // Button mit Link
