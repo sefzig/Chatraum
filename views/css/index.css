@@ -523,13 +523,13 @@
  /* Umgebung */
  /* ----------------- */
     
-    @media (min-width:   1px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 150px !important; transition: all 0.3s linear; font-size: 11px !important; } }
-    @media (min-width: 410px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 170px !important; transition: all 0.3s linear; font-size: 12px !important; } }
-    @media (min-width: 440px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 190px !important; transition: all 0.3s linear; font-size: 12px !important; } }
-    @media (min-width: 470px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 210px !important; transition: all 0.3s linear; font-size: 13px !important; } }
-    @media (min-width: 510px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 230px !important; transition: all 0.3s linear; font-size: 13px !important; } }
-    @media (min-width: 560px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
-    @media (min-width: 610px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    @media (min-width:   1px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 150px !important; transition: all 0.3s linear; font-size: 11px !important; } }
+    @media (min-width: 410px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 170px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 440px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 190px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 470px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 210px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 510px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 230px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 560px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    @media (min-width: 610px) { body[data-menu="aus"]:not([data-mobil="iphone"]) .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
     
     body[data-menu="an"]                        .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
     body[data-mobil="iphone"][data-menu="aus"]  .sk-right-row .sk-msg { margin-right: 60%; transition: all 0.3s linear; }

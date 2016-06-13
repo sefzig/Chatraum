@@ -7,6 +7,11 @@
        background: green; 
     }
     
+ /* Hintergrund */
+    body[data-mobil="iphone"] #hintergrund { 
+       display: none;
+    }
+    
  /* Nur/Nicht Mobil */
     .nur_iphone,
     body[data-mobil="iphone"] .nicht_iphone {
@@ -20,7 +25,7 @@
     body[data-mobil="iphone"] .sk-left-row {
        position: relative;
        margin-top: 5px;
-       margin-left: 40px;
+       margin-left: 37px;
     }
     body[data-mobil="iphone"] .sk-left-row .roboter {
        position: relative;

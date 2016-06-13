@@ -629,15 +629,13 @@
        // 1 Zufallszahl für jede Nachricht
           var zufall = Math.floor(Math.random()*999999);
           
-          var mobil = $("body").attr("data-mobil");
-          
        // Zugelassene Javascript-Funktionen
           var funktionen = {
              alert:        function (b) { alert(b); },
              konsole:      function (b) { konsolen(b); },
              blinken:      function ()  { blink(); },
              cookies:      function (b) { cookies(b); },
-             menu:         function (b) { if (mobil != "iphone") { menu(b); } },
+             menu:         function (b) { menu(b); },
              stil:         function (b) { stil(b); }
           };
           
@@ -955,6 +953,15 @@
  // Menü an- oder ausschalten
     function menu(methode) {
        
+    // Auf Mobil zunächst abbrechen 
+       var mobil = $("body").attr("data-mobil");
+       var hindern = $("body").attr("data-mobil-hindern");
+       if ((mobil == "iphone") && (hindern != "aus")) {
+          $("#start").fadeIn(300);
+          $("body").attr("data-mobil-hindern", "aus");
+          return;
+       }
+          
     // console.log("\n\nmenu('"+methode+"')");
        
     // Toggle ermitteln
