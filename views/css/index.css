@@ -223,19 +223,19 @@
        margin-bottom: 10px;
     }
     
-    @media (min-width:   1px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size:  8px !important; } #menu h2, #daten h2 { font-size: 12px; } #menu h3, #daten h3 { font-size: 10px !important; } }
-    @media (min-width: 400px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size:  9px !important; } #menu h2, #daten h2 { font-size: 13px; } #menu h3, #daten h3 { font-size: 11px !important; } }
-    @media (min-width: 430px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 10px !important; } #menu h2, #daten h2 { font-size: 14px; } #menu h3, #daten h3 { font-size: 12px !important; } }
-    @media (min-width: 460px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 11px !important; } #menu h2, #daten h2 { font-size: 15px; } #menu h3, #daten h3 { font-size: 13px !important; } }
-    @media (min-width: 500px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 12px !important; } #menu h2, #daten h2 { font-size: 16px; } #menu h3, #daten h3 { font-size: 14px !important; } }
-    @media (min-width: 550px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size: 13px !important; } #menu h2, #daten h2 { font-size: 17px; } #menu h3, #daten h3 { font-size: 15px !important; } }
+    @media (min-width:   1px) { #menu, #daten, #menu *, #daten * { font-size:  8px !important; } #menu h2, #daten h2 { font-size: 12px; } #menu h3, #daten h3 { font-size: 10px !important; } }
+    @media (min-width: 400px) { #menu, #daten, #menu *, #daten * { font-size:  9px !important; } #menu h2, #daten h2 { font-size: 13px; } #menu h3, #daten h3 { font-size: 11px !important; } }
+    @media (min-width: 430px) { #menu, #daten, #menu *, #daten * { font-size: 10px !important; } #menu h2, #daten h2 { font-size: 14px; } #menu h3, #daten h3 { font-size: 12px !important; } }
+    @media (min-width: 460px) { #menu, #daten, #menu *, #daten * { font-size: 11px !important; } #menu h2, #daten h2 { font-size: 15px; } #menu h3, #daten h3 { font-size: 13px !important; } }
+    @media (min-width: 500px) { #menu, #daten, #menu *, #daten * { font-size: 12px !important; } #menu h2, #daten h2 { font-size: 16px; } #menu h3, #daten h3 { font-size: 14px !important; } }
+    @media (min-width: 550px) { #menu, #daten, #menu *, #daten * { font-size: 13px !important; } #menu h2, #daten h2 { font-size: 17px; } #menu h3, #daten h3 { font-size: 15px !important; } }
     
-    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  *  { font-size: 14px !important; }
-    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten *  { font-size: 14px !important; }
-    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  h2 { font-size: 18px !important; }
-    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten h2 { font-size: 18px !important; }
-    body[data-mobil!="iphone"] #menu,  body[data-mobil!="iphone"] #menu  h3 { font-size: 16px !important; }
-    body[data-mobil!="iphone"] #daten, body[data-mobil!="iphone"] #daten h3 { font-size: 16px !important; }
+    body[data-mobil=="iphone"] #menu,  body[data-mobil=="iphone"] #menu  *  { font-size: 14px !important; }
+    body[data-mobil=="iphone"] #daten, body[data-mobil=="iphone"] #daten *  { font-size: 14px !important; }
+    body[data-mobil=="iphone"] #menu  h2 { font-size: 18px !important; }
+    body[data-mobil=="iphone"] #menu  h3 { font-size: 16px !important; }
+    body[data-mobil=="iphone"] #daten h2 { font-size: 18px !important; }
+    body[data-mobil=="iphone"] #daten h3 { font-size: 16px !important; }
     
     #menu div > div button,
     #menu div > div a { 
@@ -519,13 +519,13 @@
  /* Umgebung */
  /* ----------------- */
     
-    @media (min-width:   1px) { body[data-menu="aus"] .sk-msg { max-width: 150px !important; transition: all 0.3s linear; font-size: 11px !important; } }
-    @media (min-width: 410px) { body[data-menu="aus"] .sk-msg { max-width: 170px !important; transition: all 0.3s linear; font-size: 12px !important; } }
-    @media (min-width: 440px) { body[data-menu="aus"] .sk-msg { max-width: 190px !important; transition: all 0.3s linear; font-size: 12px !important; } }
-    @media (min-width: 470px) { body[data-menu="aus"] .sk-msg { max-width: 210px !important; transition: all 0.3s linear; font-size: 13px !important; } }
-    @media (min-width: 510px) { body[data-menu="aus"] .sk-msg { max-width: 230px !important; transition: all 0.3s linear; font-size: 13px !important; } }
-    @media (min-width: 560px) { body[data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
-    @media (min-width: 610px) { body[data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    @media (min-width:   1px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 150px !important; transition: all 0.3s linear; font-size: 11px !important; } }
+    @media (min-width: 410px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 170px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 440px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 190px !important; transition: all 0.3s linear; font-size: 12px !important; } }
+    @media (min-width: 470px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 210px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 510px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 230px !important; transition: all 0.3s linear; font-size: 13px !important; } }
+    @media (min-width: 560px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
+    @media (min-width: 610px) { body[data-mobil!="iphone"][data-menu="aus"] .sk-msg { max-width: 250px !important; transition: all 0.3s linear; font-size: 14px !important; } }
     
     body[data-menu="an"]  .sk-right-row .sk-msg { margin-right: 0%;  transition: all 0.3s linear; }
     body[data-menu="aus"] .sk-right-row .sk-msg { margin-right: 40%; transition: all 0.3s linear; }
