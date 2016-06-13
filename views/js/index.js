@@ -462,7 +462,7 @@
           klasse = klasse.toLowerCase();
           
        // Cta-Text von URL trennen
-          if ((modul == "Button") || (modul == "Text") || (modul == "Textzeit") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste") || (modul == "Email") || (modul == "Telefon")) { 
+          if ((modul == "Button") || (modul == "Text") || (modul == "Textzeit") || (modul == "Textmobil") || (modul == "Link") || (modul == "Textlink") || (modul == "Linkliste") || (modul == "Email") || (modul == "Telefon")) { 
              
           // console.log("> Button Var: "+var1);
              var buttons = text_string.split("["+modul+":");
@@ -660,6 +660,7 @@
           text_neu = inhalt("modul", text_neu, "Youtube");
           text_neu = inhalt("modul", text_neu, "Linkliste"); 
           text_neu = inhalt("modul", text_neu, "Textzeit"); 
+          text_neu = inhalt("modul", text_neu, "Textmobil"); 
           text_neu = inhalt("javascript", text_neu, funktionen, " ");
           
        // Bots anpassen

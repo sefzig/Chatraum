@@ -256,7 +256,18 @@
              "   else if (zeit < 18) { zeittext = \"%var2%\"; } ",
              "   else { zeittext = \"%var3%\"; } ",
              "   $(\".textZeit\").html(zeittext);",
-             "</script>",
+             "</script>"
+          ],
+          
+       // An Endgerät angepasster Text
+          "Textmobil":
+          [
+             "<span class='nur_iphone'>",
+                "%var1%",
+             "</span>",
+             "<span class='nicht_iphone'>",
+                "%var2%",
+             "</span>"
           ],
           
        // Button mit Link
