@@ -246,7 +246,7 @@
           "Textzeit":
           [
              "<span class='textZeit' ",
-                "onload='",
+                "onclick='",
                    "var zeittext = \"\"; ",
                    "var zeit = new Date(); ",
                    "zeit = zeit.getHours(); ",
