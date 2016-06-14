@@ -1016,7 +1016,7 @@
              methode_neu = "an";
              if (mobil == "iphone") { left_neu = "-83%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
-             zeigen = "none";
+             zeigen = "block"; // "none"
           // console.log("neue methode (aus): '"+methode+"'");
              
           }
@@ -1028,7 +1028,7 @@
           
        // Button einblenden
           window.setTimeout(function() { 
-          // $("#menu").css("display", zeigen);
+             $("#menu").css("display", zeigen); // s.o.
              $("#start").fadeIn(300); 
           }, 300);
           
