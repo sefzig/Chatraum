@@ -12,6 +12,7 @@
        display: none;
     }
     body[data-mobil="iphone"] #menu { 
+       display: none;
        bottom: -20px;
     }
     body[data-mobil="iphone"] #seite > #chat {

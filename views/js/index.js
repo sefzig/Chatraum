@@ -275,7 +275,7 @@
           });
        
        // Fokus auf Eingabe
-          var mobil = $("body[data-mobil]");
+          var mobil = $("body").attr("data-mobil");
           if (mobil != "iphone") { $("#sk-footer .message-input").focus(); }
        // window.setTimeout(function() { blink(); }, 2000);
           
@@ -1028,7 +1028,7 @@
           
        // Button einblenden
           window.setTimeout(function() { 
-             $("#menu").css("display", zeigen);
+          // $("#menu").css("display", zeigen);
              $("#start").fadeIn(300); 
           }, 300);
           
