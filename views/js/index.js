@@ -252,7 +252,6 @@
           // $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
              
              Cookies.set(daten["cookie"]["gesprochen"], "ja");
-             $("#menu").css("display","block");
              $('body').animate({scrollLeft: '0px'}, 'slow');
              $('#sk-conversation').animate({scrollTop: $('.sk-messages').height()}, 'slow');
              
@@ -265,6 +264,7 @@
           // console.log('- Nutzer hat eine Nachricht erhalten');
              
           });
+          $("#menu").css("display","block");
           
        // Konversation rendern
           anpassen();
