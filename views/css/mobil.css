@@ -1,57 +1,56 @@
     
- /* Debugging */
-    body[data-mobil="ios"] #sk-footer { 
-       background: red; 
-    }
-    body[data-mobil="iphone"] #sk-footer { 
-       background: green; 
-    }
-    
  /* Hintergrund */
-    body[data-mobil="iphone"] #hintergrund { 
+    body:not([data-mobil=""]) #hintergrund { 
        display: none;
     }
-    body[data-mobil="iphone"] #menu { 
+    body:not([data-mobil=""]) #menu { 
        display: none;
        bottom: -20px;
     }
-    body[data-mobil="iphone"] #seite > #chat {
+    body:not([data-mobil=""]) #seite > #chat {
     /* bottom: -20px !important; */
     }
     
  /* Nur/Nicht Mobil */
-    .nur_iphone,
-    body[data-mobil="iphone"] .nicht_iphone {
+    .nur_mobil,
+    body:not([data-mobil=""]) .nicht_mobil {
        display: none;
     }
-    body[data-mobil="iphone"] .nur_iphone {
+    body:not([data-mobil=""]) .nur_mobil {
        display: inline;
     }
     
  /* Anpassungen Absender */
-    body[data-mobil="iphone"] .sk-left-row {
+    body:not([data-mobil=""]) .sk-left-row {
        position: relative;
        margin-top: 5px;
        margin-left: 37px;
     }
-    body[data-mobil="iphone"] .sk-right-row {
+    body:not([data-mobil=""]) .sk-right-row {
        margin-top: 5px;
     }
-    body[data-mobil="iphone"] .sk-left-row .roboter {
+    body:not([data-mobil=""]) .sk-left-row .roboter {
        position: relative;
     }
-    body[data-mobil="iphone"] .sk-left-row .sk-msg-avatar {
+    body:not([data-mobil=""]) .sk-left-row .sk-msg-avatar {
        position: absolute;
        top: -9px;
        left: -45px;
     }
-    body[data-mobil="iphone"] .sk-left-row .sk-from {
+    body:not([data-mobil=""]) .sk-left-row .sk-from {
        top: -10px;
        left: 0px;
     }
     
-    body[data-mobil="iphone"] .sk-logo {
+    body:not([data-mobil=""]) .sk-logo {
        margin-left: auto !important;
        margin-right: auto !important;
+    }
+    
+    body:not([data-mobil=""]) #datenFormular {
+    	position: absolute;
+    	right: 0px;
+    	bottom: 0px;
+    	left: 0px;
     }
     

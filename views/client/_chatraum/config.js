@@ -96,7 +96,7 @@
        	 
        // Benutzeroberfläche
           "headerText": "Chatraum #Robogeddon",
-          "startText": "Dies ist der Anfang des Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen<span class=nicht_iphone> - z.B. Hallo</span>!</span>",
+          "startText": "Dies ist der Anfang des Gesprächs.<br/><span class=blink>Schreiben Sie irgendetwas, um zu beginnen<span class=nicht_mobil> - z.B. Hallo</span>!</span>",
           "inputPlaceholder": "Schreiben Sie eine Nachricht...",
           "sendButtonText": "Absenden",
           
@@ -262,10 +262,10 @@
        // An Endgerät angepasster Text
           "Textmobil":
           [
-             "<span class='nur_iphone'>",
+             "<span class='nur_mobil'>",
                 "%var1%",
              "</span>",
-             "<span class='nicht_iphone'>",
+             "<span class='nicht_mobil'>",
                 "%var2%",
              "</span>"
           ],

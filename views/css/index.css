@@ -104,7 +104,7 @@
        bottom: 56px;
        width: 42%;
     }
-    body[data-mobil="iphone"] #seite > #menu {
+    body:not([data-mobil=""]) #seite > #menu {
        right: -83%;
        width: 83%;
     }
@@ -171,10 +171,10 @@
     @media (min-height:  500px) { #seite > #daten > div div img { max-height:  400px; animation-name: hohe5;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe5  { to { max-height: 400px; } }
     @media (min-height:  550px) { #seite > #daten > div div img { max-height:  460px; animation-name: hohe6;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe6  { to { max-height: 460px; } }
     @media (min-height:  600px) { #seite > #daten > div div img { max-height:  410px; animation-name: hohe7;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe7  { to { max-height: 410px; } }
-    @media (min-height:  650px) { #seite > #daten > div div img { max-height:  470px; animation-name: hohe8;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe8  { to { max-height: 470px; } }
+    @media (min-height:  660px) { #seite > #daten > div div img { max-height:  460px; animation-name: hohe8;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe8  { to { max-height: 470px; } }
     @media (min-height:  700px) { #seite > #daten > div div img { max-height:  510px; animation-name: hohe9;  animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe9  { to { max-height: 510px; } }
-    @media (min-height:  725px) { #seite > #daten > div div img { max-height:  540px; animation-name: hohe10; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe10 { to { max-height: 540px; } }
-    @media (min-height:  750px) { #seite > #daten > div div img { max-height:  570px; animation-name: hohe11; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe11 { to { max-height: 570px; } }
+    @media (min-height:  725px) { #seite > #daten > div div img { max-height:  535px; animation-name: hohe10; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe10 { to { max-height: 540px; } }
+    @media (min-height:  750px) { #seite > #daten > div div img { max-height:  560px; animation-name: hohe11; animation-duration: 1s; animation-iteration-count: 1; }} @keyframes hohe11 { to { max-height: 570px; } }
     
     #seite > #daten > div div div {
        position: absolute;
@@ -227,12 +227,12 @@
        margin-bottom: 10px;
     }
     
-    body[data-mobil="iphone"] #menu,  body[data-mobil="iphone"] #menu  *  { font-size: 14px !important; }
-    body[data-mobil="iphone"] #daten, body[data-mobil="iphone"] #daten *  { font-size: 14px !important; }
-    body[data-mobil="iphone"] #menu  h2 { font-size: 18px !important; }
-    body[data-mobil="iphone"] #menu  h3 { font-size: 16px !important; }
-    body[data-mobil="iphone"] #daten h2 { font-size: 18px !important; }
-    body[data-mobil="iphone"] #daten h3 { font-size: 16px !important; }
+    body:not([data-mobil=""]) #menu,  body:not([data-mobil=""]) #menu  *  { font-size: 14px !important; }
+    body:not([data-mobil=""]) #daten, body:not([data-mobil=""]) #daten *  { font-size: 14px !important; }
+    body:not([data-mobil=""]) #menu  h2 { font-size: 18px !important; }
+    body:not([data-mobil=""]) #menu  h3 { font-size: 16px !important; }
+    body:not([data-mobil=""]) #daten h2 { font-size: 18px !important; }
+    body:not([data-mobil=""]) #daten h3 { font-size: 16px !important; }
     
     @media (min-width:   1px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size:  8px !important; } #menu h2, #daten h2 { font-size: 12px; } #menu h3, #daten h3 { font-size: 10px !important; } }
     @media (min-width: 400px) { #menu, #menu button, #menu input, #daten input, #daten span { font-size:  9px !important; } #menu h2, #daten h2 { font-size: 13px; } #menu h3, #daten h3 { font-size: 11px !important; } }
@@ -380,7 +380,7 @@
  /* ----------------- */
     
  /* Dimensionen */
-    body[data-mobil="iphone"] .sk-msg { 
+    body:not([data-mobil=""]) .sk-msg { 
        max-width: 222px !important;
     }
     .sk-msg { 
@@ -700,3 +700,11 @@
        min-height: 50%;
     }}
     
+    #datenFormular {
+    	position: absolute;
+    	right: 0px;
+    	bottom: 20px;
+    	left: 0px;
+    	height: 100px;
+    	text-align: center;
+    }
