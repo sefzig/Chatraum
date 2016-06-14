@@ -782,16 +782,16 @@
        }
        
        if (methode == "an") {
-          $(".befehle").fadeIn();
+          $(".befehle").off().fadeIn();
           $("#befehlleiste input").val("x");
        }
        else {
-          $(".befehle").fadeOut();
+          $(".befehle").off().fadeOut();
           $("#befehlleiste input").val("i");
        }
        
     // :/
-       window.setTimeout(function() { $(".befehle > div").stop().css("display","block").show().fadeIn().slideDown(); },1);
+       window.setTimeout(function() { $(".befehle > div").off().css("display","block"); },1);
        
     }
     
