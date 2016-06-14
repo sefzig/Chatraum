@@ -223,7 +223,7 @@
               (~befehl.indexOf("--BOT-AN"))) { 
              versuch = true; 
              botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!')
              .then(() => 'empfang');
           }
           
@@ -420,7 +420,7 @@
               (~befehl.indexOf("--BOT-AN"))) { 
              versuch = true; 
              botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!')
              .then(() => 'empfang');
           }
           
@@ -618,7 +618,7 @@
               (~befehl.indexOf("--BOT-AN"))) { 
              versuch = true; 
              botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!')
              .then(() => 'empfang');
           }
           
