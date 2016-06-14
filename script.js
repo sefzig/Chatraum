@@ -204,6 +204,30 @@
           var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
           
        // -----------------
+       // Bot-Schalter
+       // -----------------
+          
+          if ((~befehl.indexOf("--BOTSAUS")) ||
+              (~befehl.indexOf("--BOTS-AUS")) ||
+              (~befehl.indexOf("--BOTAUS")) ||
+              (~befehl.indexOf("--BOT-AUS"))) { 
+             versuch = true; 
+             botsan = false;
+             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
+             .then(() => 'empfang');
+          }
+          
+          if ((~befehl.indexOf("--BOTSAN")) ||
+              (~befehl.indexOf("--BOTS-AN")) ||
+              (~befehl.indexOf("--BOTAN")) ||
+              (~befehl.indexOf("--BOT-AN"))) { 
+             versuch = true; 
+             botsan = true;
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             .then(() => 'empfang');
+          }
+          
+       // -----------------
        // Befehle
        // -----------------
           
@@ -222,35 +246,6 @@
           }
           
           if ((~befehl.indexOf("--MENÜAN")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'empfang');}if ((~befehl.indexOf("--MENUAN")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'empfang');}          if ((~befehl.indexOf("--MENÜAUS")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'empfang');}if ((~befehl.indexOf("--MENUAUS")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'empfang');}          if ((~befehl.indexOf("--MENÜ")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'empfang');}if ((~befehl.indexOf("--MENU")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'empfang');}if ((~befehl.indexOf("--MENUE")) && (botsan == true)) { versuch = true; return bot.say(EmpfangsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'empfang');}          
-          
-          
-          
-          
-          if ((~befehl.indexOf("--BOTSAUS")) ||
-              (~befehl.indexOf("--BOTS-AUS")) ||
-              (~befehl.indexOf("--BOTAUS")) ||
-              (~befehl.indexOf("--BOT-AUS"))) { 
-             versuch = true; 
-             botsan = false;
-             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
-             .then(() => 'empfang');
-          }
-          
-          if ((~befehl.indexOf("--BOTSAN")) ||
-              (~befehl.indexOf("--BOTS-AN")) ||
-              (~befehl.indexOf("--BOTAN")) ||
-              (~befehl.indexOf("--BOT-AN"))) { 
-             versuch = true; 
-             botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir Bots wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder sprechen Sie mit unserem --Verkauf oder dem --Marketing.!')
-             .then(() => 'empfang');
-          }
-          
-          
-          
-          
-          
-          
        // -----------------
        // Onboarding
        // -----------------
@@ -346,8 +341,18 @@
           zuletzt = zuruck;
           
        // Irrläufer
-          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
-             bot.say(EmpfangsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          if (versuch == true) { 
+             versuche = 0;
+          }
+          else { 
+             if (botsan == true) {
+                versuche++; 
+                if (versuche == versuche_max)
+                {
+                   bot.say(EmpfangsBot+'Suchen Sie meine --Befehle? Oder schalten Sie alle --Bots-aus.'); 
+                   versuche = 0;
+                }
+             }
           }
           
        // Weiterleiten
@@ -396,6 +401,30 @@
           var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
           
        // -----------------
+       // Bot-Schalter
+       // -----------------
+          
+          if ((~befehl.indexOf("--BOTSAUS")) ||
+              (~befehl.indexOf("--BOTS-AUS")) ||
+              (~befehl.indexOf("--BOTAUS")) ||
+              (~befehl.indexOf("--BOT-AUS"))) { 
+             versuch = true; 
+             botsan = false;
+             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
+             .then(() => 'empfang');
+          }
+          
+          if ((~befehl.indexOf("--BOTSAN")) ||
+              (~befehl.indexOf("--BOTS-AN")) ||
+              (~befehl.indexOf("--BOTAN")) ||
+              (~befehl.indexOf("--BOT-AN"))) { 
+             versuch = true; 
+             botsan = true;
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             .then(() => 'empfang');
+          }
+          
+       // -----------------
        // Befehle
        // -----------------
           
@@ -414,35 +443,6 @@
           }
           
           if ((~befehl.indexOf("--MENÜAN")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'verkauf');}if ((~befehl.indexOf("--MENUAN")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'verkauf');}          if ((~befehl.indexOf("--MENÜAUS")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'verkauf');}if ((~befehl.indexOf("--MENUAUS")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'verkauf');}          if ((~befehl.indexOf("--MENÜ")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'verkauf');}if ((~befehl.indexOf("--MENU")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'verkauf');}if ((~befehl.indexOf("--MENUE")) && (botsan == true)) { versuch = true; return bot.say(VerkaufsBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'verkauf');}          
-          
-          
-          
-          
-          if ((~befehl.indexOf("--BOTSAUS")) ||
-              (~befehl.indexOf("--BOTS-AUS")) ||
-              (~befehl.indexOf("--BOTAUS")) ||
-              (~befehl.indexOf("--BOT-AUS"))) { 
-             versuch = true; 
-             botsan = false;
-             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
-             .then(() => 'empfang');
-          }
-          
-          if ((~befehl.indexOf("--BOTSAN")) ||
-              (~befehl.indexOf("--BOTS-AN")) ||
-              (~befehl.indexOf("--BOTAN")) ||
-              (~befehl.indexOf("--BOT-AN"))) { 
-             versuch = true; 
-             botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir Bots wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder sprechen Sie mit unserem --Verkauf oder dem --Marketing.!')
-             .then(() => 'empfang');
-          }
-          
-          
-          
-          
-          
-          
        // -----------------
        // Onboarding
        // -----------------
@@ -539,8 +539,18 @@
           zuletzt = zuruck;
           
        // Irrläufer
-          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
-             bot.say(VerkaufsBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          if (versuch == true) { 
+             versuche = 0;
+          }
+          else { 
+             if (botsan == true) {
+                versuche++; 
+                if (versuche == versuche_max)
+                {
+                   bot.say(VerkaufsBot+'Suchen Sie meine --Befehle? Oder schalten Sie alle --Bots-aus.'); 
+                   versuche = 0;
+                }
+             }
           }
           
        // Weiterleiten
@@ -589,6 +599,30 @@
           var zuletzt_kamel = zuletzt_dann.charAt(0).toUpperCase() + zuletzt_dann.slice(1);
           
        // -----------------
+       // Bot-Schalter
+       // -----------------
+          
+          if ((~befehl.indexOf("--BOTSAUS")) ||
+              (~befehl.indexOf("--BOTS-AUS")) ||
+              (~befehl.indexOf("--BOTAUS")) ||
+              (~befehl.indexOf("--BOT-AUS"))) { 
+             versuch = true; 
+             botsan = false;
+             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
+             .then(() => 'empfang');
+          }
+          
+          if ((~befehl.indexOf("--BOTSAN")) ||
+              (~befehl.indexOf("--BOTS-AN")) ||
+              (~befehl.indexOf("--BOTAN")) ||
+              (~befehl.indexOf("--BOT-AN"))) { 
+             versuch = true; 
+             botsan = true;
+             return bot.say(EmpfangsBot+' Da sind wir wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder dem --Verkauf oder --Marketing!'))
+             .then(() => 'empfang');
+          }
+          
+       // -----------------
        // Befehle
        // -----------------
           
@@ -607,35 +641,6 @@
           }
           
           if ((~befehl.indexOf("--MENÜAN")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'marketing');}if ((~befehl.indexOf("--MENUAN")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü eingeschaltet. ').then(() => 'marketing');}          if ((~befehl.indexOf("--MENÜAUS")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'marketing');}if ((~befehl.indexOf("--MENUAUS")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü ausgeschaltet. ').then(() => 'marketing');}          if ((~befehl.indexOf("--MENÜ")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'marketing');}if ((~befehl.indexOf("--MENU")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'marketing');}if ((~befehl.indexOf("--MENUE")) && (botsan == true)) { versuch = true; return bot.say(MarketingBot+' [Javascript:menu()] Menü umgeschaltet. ').then(() => 'marketing');}          
-          
-          
-          
-          
-          if ((~befehl.indexOf("--BOTSAUS")) ||
-              (~befehl.indexOf("--BOTS-AUS")) ||
-              (~befehl.indexOf("--BOTAUS")) ||
-              (~befehl.indexOf("--BOT-AUS"))) { 
-             versuch = true; 
-             botsan = false;
-             return bot.say(EmpfangsBot+' Sie haben uns Bots ausgeschaltet. Sie können uns wieder anschalten, indem Sie --Bots-an schreiben.')
-             .then(() => 'empfang');
-          }
-          
-          if ((~befehl.indexOf("--BOTSAN")) ||
-              (~befehl.indexOf("--BOTS-AN")) ||
-              (~befehl.indexOf("--BOTAN")) ||
-              (~befehl.indexOf("--BOT-AN"))) { 
-             versuch = true; 
-             botsan = true;
-             return bot.say(EmpfangsBot+' Da sind wir Bots wieder! Schreiben Sie --Empfang, um mit mir zu sprechen - oder sprechen Sie mit unserem --Verkauf oder dem --Marketing.!')
-             .then(() => 'empfang');
-          }
-          
-          
-          
-          
-          
-          
        // -----------------
        // Onboarding
        // -----------------
@@ -732,8 +737,18 @@
           zuletzt = zuruck;
           
        // Irrläufer
-          if (versuch == true) { versuche = 0; } else { versuche++; if (versuche == versuche_max) {
-             bot.say(MarketingBot+'Suchen Sie meine --Befehle?'); versuche = 0; }
+          if (versuch == true) { 
+             versuche = 0;
+          }
+          else { 
+             if (botsan == true) {
+                versuche++; 
+                if (versuche == versuche_max)
+                {
+                   bot.say(MarketingBot+'Suchen Sie meine --Befehle? Oder schalten Sie alle --Bots-aus.'); 
+                   versuche = 0;
+                }
+             }
           }
           
        // Weiterleiten
