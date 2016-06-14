@@ -252,6 +252,7 @@
           // $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
              
              Cookies.set(daten["cookie"]["gesprochen"], "ja");
+             $("#menu").css("display","block");
              $('body').animate({scrollLeft: '0px'}, 'slow');
              $('#sk-conversation').animate({scrollTop: $('.sk-messages').height()}, 'slow');
              
@@ -264,7 +265,6 @@
           // console.log('- Nutzer hat eine Nachricht erhalten');
              
           });
-          $("#menu").css("display","block");
           
        // Konversation rendern
           anpassen();
@@ -379,7 +379,7 @@
        // alert("Befehler laden: "+inhalt);
           
        // Befehler-Button anzeigen
-          $("#befehlleiste").fadeIn();
+          $("#befehlleiste").css("display", "block");
           
           selektor = "#sk-footer";
           $(selektor).mouseenter(function() {
@@ -1012,7 +1012,7 @@
                 
              methode_neu = "aus";
              left_neu = "0%";
-             if (mobil != "") { breite_neu = "100%"; } else { breite_neu = "83%"; }
+             if (mobil != "") { breite_neu = "100%"; } else { breite_neu = "84%"; }
              zeigen = "block";
           // console.log("neue methode (an): '"+methode+"'");
                 
@@ -1020,7 +1020,7 @@
           else {
              
              methode_neu = "an";
-             if (mobil != "") { left_neu = "-83%"; } else { left_neu = "-42%"; }
+             if (mobil != "") { left_neu = "-84%"; } else { left_neu = "-42%"; }
              breite_neu = "100%";
              zeigen = "block"; // "none"
           // console.log("neue methode (aus): '"+methode+"'");

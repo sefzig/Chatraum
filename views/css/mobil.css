@@ -55,13 +55,14 @@
     }
     
     body:not([data-mobil=""]) #befehlleiste > input {
-      -webkit-appearance: none;
-      -webkit-border-radius: 10;
       padding-left: 0px;
       padding-top: 0px;
       padding-bottom: 0px;
       padding-right: 0px;
       width: 20px;
       height: 20px;
+      border-radius: 10px;
+      -webkit-border-radius: 10px;
+      -webkit-appearance: none;
     }
     
