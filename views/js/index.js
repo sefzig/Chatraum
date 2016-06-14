@@ -252,6 +252,7 @@
           // $(".sk-messages").append('<img src="img/ui/Schreiben.gif" class="typing" />');
              
              Cookies.set(daten["cookie"]["gesprochen"], "ja");
+             $("#menu").css("display","block");
              
           });
           Smooch.on('message:received', function(message) {
