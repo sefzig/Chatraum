@@ -253,6 +253,8 @@
              
              Cookies.set(daten["cookie"]["gesprochen"], "ja");
              $("#menu").css("display","block");
+             $('body').animate({scrollLeft: '0px'}, 'slow');
+             $('#sk-conversation').animate({scrollTop: $('.sk-messages').height()}, 'slow');
              
           });
           Smooch.on('message:received', function(message) {

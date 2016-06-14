@@ -55,7 +55,7 @@
              
              if (bekannt == false) {
                 
-                                return bot.say(EmpfangsBot+' Willkommen in der Vorlage des --Chatraums. Wir sind 3 Bots: Ich bin Alice, Barbara ist im --Verkauf und Cynthia macht unser --Marketing. ').then(() => bot.say(EmpfangsBot+' Unterhalten Sie sich mit uns, indem Sie die farbig hinterlegten Wörter schreiben, klicken oder berühren! ')).then(() => bot.say(EmpfangsBot+' [Textmobil:Bitte fügen Sie uns Ihrem Handy als Webapp hinzu um von uns wiedererkannt zu werden!,Ich habe rechts das Menü für Sie geöffnet. Sie können es mit dem Button oben rechts bedienen - oder indem Sie --Menü schreiben.] [Javascript:menu(an)] ')).then(() => 'empfang');                
+                                return bot.say(EmpfangsBot+' Willkommen in der Vorlage des --Chatraums. Wir sind 3 Bots: Ich bin Alice, Barbara ist im --Verkauf und Cynthia macht unser --Marketing. ').then(() => bot.say(EmpfangsBot+' Unterhalten Sie sich mit uns, indem Sie die farbig hinterlegten Wörter schreiben, klicken oder berühren! ')).then(() => bot.say(EmpfangsBot+' [Textmobil:Rechts finden Sie ein Menü - berühren Sie dafür den Knopf oben rechts oder wischen Sie nach links.,Ich habe rechts das Menü für Sie geöffnet. Sie können es mit dem Button oben rechts bedienen - oder indem Sie --Menü schreiben.] [Javascript:menu(an)] ')).then(() => 'empfang');                
              }
              else {
                 
