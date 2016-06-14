@@ -544,7 +544,7 @@
     
     .befehle {
        display: none;
-       position: fixed; 
+       position: absolute; 
        z-index: 10001 !important;
        bottom: 17px; 
        left: 34px; 
@@ -582,7 +582,7 @@
        margin-left: 1px;
     }
     
-    #befehle {
+    #befehlleiste {
        display: none;
        position: absolute;
        z-index: 3002;
@@ -590,7 +590,7 @@
        right: 90px;
        border: 0px black solid;
     }
-    #befehle input {
+    #befehlleiste input {
        width: 20px;
        height: 20px;
        background-color: #dddddd;
@@ -605,7 +605,7 @@
       -ms-transition: background-color 500ms linear;
        transition: background-color 500ms linear;
     }
-    #befehle input.aktiv {
+    #befehlleiste input.aktiv {
        background-color: #00aeff;
       -webkit-transition: background-color 500ms linear;
       -moz-transition: background-color 500ms linear;

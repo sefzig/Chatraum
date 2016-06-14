@@ -144,14 +144,14 @@
     body[data-stil="hacks"]      .befehler { background-color: #00ff00 !important; color:   black; }
     
  /* Befehler-Button */
-    body[data-stil="tag"]        #befehle input { background-color: #cccccc !important; color: #ffffff; }
-    body[data-stil="robogeddon"] #befehle input { background-color: #dddddd !important; color: #ffffff; }
-    body[data-stil="nacht"]      #befehle input { background-color: #333333 !important; color: #666666; }
-    body[data-stil="hacks"]      #befehle input { background-color: #000000 !important; color: #000000; }
+    body[data-stil="tag"]        #befehlleiste input { background-color: #cccccc !important; color: #ffffff; }
+    body[data-stil="robogeddon"] #befehlleiste input { background-color: #dddddd !important; color: #ffffff; }
+    body[data-stil="nacht"]      #befehlleiste input { background-color: #333333 !important; color: #666666; }
+    body[data-stil="hacks"]      #befehlleiste input { background-color: #000000 !important; color: #000000; }
     
  /* Befehler-Button aktiv */
-    body[data-stil="tag"]        #befehle input.aktiv { background-color: #00aeff !important; color:   white; }
-    body[data-stil="robogeddon"] #befehle input.aktiv { background-color: #00aeff !important; color:   white; }
-    body[data-stil="nacht"]      #befehle input.aktiv { background-color: #00aeff !important; color:   black; }
-    body[data-stil="hacks"]      #befehle input.aktiv { background-color: #00ff00 !important; color:   black; }
+    body[data-stil="tag"]        #befehlleiste input.aktiv { background-color: #00aeff !important; color:   white; }
+    body[data-stil="robogeddon"] #befehlleiste input.aktiv { background-color: #00aeff !important; color:   white; }
+    body[data-stil="nacht"]      #befehlleiste input.aktiv { background-color: #00aeff !important; color:   black; }
+    body[data-stil="hacks"]      #befehlleiste input.aktiv { background-color: #00ff00 !important; color:   black; }
     

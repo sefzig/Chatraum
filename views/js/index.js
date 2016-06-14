@@ -134,7 +134,7 @@
        
     // Befehler-Button default
        var befehlerConfig = config["default"]["befehler"];
-       if (befehlerConfig == "an") { $("#befehle").fadeIn(); }
+       if (befehlerConfig == "an") { $("#befehlleiste").fadeIn(); }
        
     // Intro-Texte einsetzen
        $("#namenEingeben").html(texte["intro"]["namenEingeben"]);
@@ -379,15 +379,15 @@
        // alert("Befehler laden: "+inhalt);
           
        // Befehler-Button anzeigen
-          $("#befehle").fadeIn();
+          $("#befehlleiste").fadeIn();
           
           selektor = "#sk-footer";
           $(selektor).mouseenter(function() {
-             $("#befehle input").addClass("aktiv");
+             $("#befehlleiste input").addClass("aktiv");
           });
 
           $(selektor).mouseleave(function() {
-             $("#befehle input").removeClass("aktiv");
+             $("#befehlleiste input").removeClass("aktiv");
              befehlerSchalter("aus");
           });
           
@@ -775,7 +775,7 @@
      // console.log("befehlerSchalter('"+methode+"')");
        if ((!methode) || (methode == "")) {
           
-          var stand = $("#befehle input").val();
+          var stand = $("#befehlleiste input").val();
           if (stand == "i") { methode = "an"; }
           else { methode = "aus"; }
        
@@ -783,12 +783,15 @@
        
        if (methode == "an") {
           $(".befehle").fadeIn();
-          $("#befehle input").val("x");
+          $("#befehlleiste input").val("x");
        }
        else {
           $(".befehle").fadeOut();
-          $("#befehle input").val("i");
+          $("#befehlleiste input").val("i");
        }
+       
+    // :/
+       window.setTimeout(function() { $(".befehle > div").stop().css("display","block").show().fadeIn().slideDown(); },1);
        
     }
     

@@ -146,13 +146,13 @@
           "leiste": [
              
              "<div class='befehle'>",
-               "<div>",
-                 "<div class='befehler' rel='Befehle'><span onclick='befehlerKlick(\"Befehle\"); befehlerSchalter(); $(this).parent().fadeOut();'>Befehle</span><span onclick='$(this).parent().fadeOut();'> x </span> </div>",
-                 "<div class='befehler' rel='Über'   ><span onclick='befehlerKlick(\"Über\");    befehlerSchalter(); $(this).parent().fadeOut();'>Über</span><span    onclick='$(this).parent().fadeOut();'> x </span> </div>",
-                 "<div class='befehler' rel='Hallo'  ><span onclick='befehlerKlick(\"Hallo\");   befehlerSchalter(); $(this).parent().fadeOut();'>Hallo</span><span   onclick='$(this).parent().fadeOut();'> x </span> </div>",
+               "<div style='display:block !important'>",
+                 "<div class='befehler' rel='Befehle'><span onclick='befehlerKlick(\"Befehle\"); befehlerSchalter();'> Befehle </span><span onclick='$(this).parent().fadeOut();'> x </span> </div>",
+                 "<div class='befehler' rel='Über'   ><span onclick='befehlerKlick(\"Über\");    befehlerSchalter();'> Über    </span><span onclick='$(this).parent().fadeOut();'> x </span> </div>",
+                 "<div class='befehler' rel='Hallo'  ><span onclick='befehlerKlick(\"Hallo\");   befehlerSchalter();'> Hallo   </span><span onclick='$(this).parent().fadeOut();'> x </span> </div>",
                "</div>",
              "</div>",
-             "<div id='befehle' style=''>",
+             "<div id='befehlleiste' style=''>",
                "<input tabindex='99' type='button' value='i' onclick='befehlerSchalter();' />",
              "</div>"
              
@@ -164,7 +164,7 @@
              "<div class='befehler' ",
                 "rel='%inhalt%' >",
                 "<span onclick='",
-                  "befehlerKlick(\"%inhalt%\"); befehlerSchalter(); $(this).parent().fadeOut();",
+                  "befehlerKlick(\"%inhalt%\"); befehlerSchalter();",
                 "'>",
                   "%inhalt%",
                 "</span>",
