@@ -29,7 +29,8 @@
        "syntax": { 
           
        // Befehl
-          "befehlPrefix": "--",
+          "befehlPrefix1": "--",
+          "befehlPrefix2": "—",
           "befehlErsatz": ""
           
        },
@@ -135,7 +136,7 @@
              
              "<span class='befehl' ",
                 "onclick='",
-                   "befehlen(\""+config["syntax"]["befehlPrefix"]+"%inhalt%\");",
+                   "befehlen(\""+config["syntax"]["befehlPrefix1"]+"%inhalt%\");",
                 "'>",
                 ""+config["syntax"]["befehlErsatz"]+"%inhalt%",
              "</span>"

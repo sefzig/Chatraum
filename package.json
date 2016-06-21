@@ -1,7 +1,7 @@
 {
   "name": "chatraum",
   "version": "0.3.0",
-  "description": "Die Vorlage des Chatraums",
+  "description": "Die Vorlage des Robogeddon Chatraums",
   "author": "Andreas Sefzig <andreas@sefzig.net.net> (http://sefzig.net/robogeddon/chatraum/)",
   "scripts": {
     "start": "node heroku"
