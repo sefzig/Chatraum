@@ -741,7 +741,8 @@
                    
                 // Avatar davor verbergen
                 // $(this).parent().parent().prev().children().filter("img.sk-msg-avatar").attr("src", config["anwendung"]["cdn"]+"Displaybild_LeerBot.png"); // vor 22.06.16
-                   $(this).parent().prev().children().filter("img.sk-msg-avatar").attr("src", config["anwendung"]["cdn"]+"Displaybild_LeerBot.png"); // nach 22.06.16
+                // $(this).parent().prev().children().filter("img.sk-msg-avatar").attr("src", config["anwendung"]["cdn"]+"Displaybild_LeerBot.png"); // nach 22.06.16
+                   $(this).parent().prev().find(".sk-msg-avatar").css("display", "none"); // nach 22.06.16
                    
                 // Pfeilchen davor verbergen
                 // $(this).parent().parent().prev().find(".sk-msg").addClass("frei"); // vor 22.06.16
@@ -752,8 +753,10 @@
                 else {
                    
                 // console.log("> Anderer Vorganger: "+vorganger+" != "+name+"");
+                   $(this).parent().prev().find(".sk-msg-avatar").css("display", "none"); // nach 22.06.16
                    
                 }
+                
                 vorganger = "";
                 dieser = "";
                 
